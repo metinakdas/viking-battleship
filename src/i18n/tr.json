@@ -1,0 +1,339 @@
+{
+  "app": {
+    "title": "AMİRAL BATTI",
+    "subtitle": "Kuzey Denizlerinin Savaşı"
+  },
+  "common": {
+    "guest": "Misafir",
+    "loading": "Yükleniyor…",
+    "cancel": "İptal",
+    "ok": "Tamam",
+    "back": "Geri",
+    "logout": "Çıkış",
+    "or": "ya da",
+    "yes": "Evet",
+    "no": "Hayır",
+    "close": "Kapat",
+    "settings": "Ayarlar",
+    "you": "Sen"
+  },
+  "ships": {
+    "drakkar": "Drakkar",
+    "snekkja": "Snekkja",
+    "karvi": "Karvi",
+    "knarr": "Knarr",
+    "faering": "Færing"
+  },
+  "board": {
+    "own": "Kendi filon",
+    "enemy": "Düşman suları",
+    "cell": {
+      "miss": "{cell}, ıska",
+      "hit": "{cell}, isabet",
+      "sunk": "{cell}, batırıldı",
+      "ship": "{cell}, {ship}"
+    }
+  },
+  "uiShowcase": {
+    "title": "Bileşen Vitrini",
+    "description": "Viking teması + buzlu cam. Geliştirici sayfası (/dev/ui).",
+    "buttons": "Butonlar",
+    "primary": "Savaşa Hazırım",
+    "secondary": "Rastgele Diz",
+    "ghost": "Temizle",
+    "disabled": "Pasif",
+    "pills": "Etiketler",
+    "inputs": "Alanlar",
+    "username": "Kullanıcı adı",
+    "password": "Şifre",
+    "usernameError": "En az 3 karakter",
+    "typography": "Tipografi",
+    "colors": "Renkler",
+    "fleet": "Filo",
+    "ownBoard": "Kendi Filon",
+    "enemyBoard": "Düşman Suları",
+    "placement": "Yerleştirme Önizleme",
+    "hoverHint": "Fareyle üzerine gel: satır/sütun vurgusu ve nişangah. Tıkla: ateş."
+  },
+  "auth": {
+    "login": {
+      "title": "Tekrar hoş geldin, Kaptan",
+      "email": "E-posta",
+      "password": "Şifre",
+      "submit": "Giriş Yap",
+      "guest": "Misafir olarak oyna",
+      "noAccount": "Hesabın yok mu?",
+      "register": "Kayıt ol"
+    },
+    "guest": {
+      "title": "Misafir Kaptan",
+      "hint": "Hesap gerekmez. Adın ve kalkanın bu cihazda saklanır.",
+      "nickname": "Takma ad",
+      "rerollName": "Başka ad öner",
+      "rerollAvatar": "Kalkanı değiştir",
+      "submit": "Denize Açıl"
+    },
+    "register": {
+      "title": "Mürettebata katıl",
+      "displayName": "Kaptan adı",
+      "email": "E-posta",
+      "password": "Şifre",
+      "passwordHint": "En az 6 karakter",
+      "submit": "Kayıt Ol",
+      "haveAccount": "Zaten hesabın var mı?",
+      "login": "Giriş yap"
+    },
+    "errors": {
+      "invalid_email": "Geçerli bir e-posta gir.",
+      "weak_password": "Şifre en az 6 karakter olmalı.",
+      "invalid_nickname": "Ad 3–16 karakter olmalı; harf, rakam, boşluk, _ ve - kullanılabilir.",
+      "email_taken": "Bu e-postayla bir hesap zaten var.",
+      "invalid_credentials": "E-posta ya da şifre hatalı.",
+      "not_guest": "Bu hesap zaten kayıtlı.",
+      "not_signed_in": "Önce giriş yapmalısın.",
+      "unknown": "Bir şeyler ters gitti. Tekrar dene.",
+      "required": "Bu alan gerekli."
+    }
+  },
+  "lobby": {
+    "subtitle": "Rüzgâr arkanda, kürekler hazır. Bugün hangi sulara yelken açıyorsun?",
+    "ai": {
+      "title": "Jarla Meydan Oku",
+      "description": "Bilgisayara karşı. Her jarlın kendi savaş tarzı var.",
+      "start": "Savaşa Başla",
+      "levels": {
+        "easy": "Kolay",
+        "normal": "Normal",
+        "hard": "Zor"
+      },
+      "levelHints": {
+        "easy": "Rastgele ateş eder. Isınmak için ideal.",
+        "normal": "İsabet alınca etrafını avlar.",
+        "hard": "Olasılık haritasıyla nişan alır. Acımaz."
+      },
+      "pick": "Rakibini seç",
+      "waiting": "{name} seni bekliyor."
+    },
+    "hotseat": {
+      "title": "Dost Kavgası",
+      "description": "Aynı cihazda iki kaptan. Her sırada perde iner; gemiler gizli kalır.",
+      "start": "Başla",
+      "step1": "İkiniz de filonuzu gizlice dizin",
+      "step2": "Her sırada perde iner: cihazı devret",
+      "step3": "Sırayla ateş edin; son gemi batana dek"
+    },
+    "random": {
+      "title": "Rastgele Rakip",
+      "description": "Denizlerde dolaşan bir kaptanla eşleş.",
+      "start": "Rakip Bul"
+    },
+    "room": {
+      "title": "Oda Kur",
+      "description": "Arkadaşını davet et: 6 haneli kod ya da link.",
+      "start": "Oda Kur"
+    },
+    "join": {
+      "title": "Kodla Katıl",
+      "description": "Arkadaşının kodunu ya da linkini gir.",
+      "placeholder": "Örn. K7QM2X",
+      "submit": "Katıl",
+      "invalid": "Kod 6 harf/rakam olmalı."
+    },
+    "upgrade": {
+      "title": "Misafir olarak oynuyorsun",
+      "description": "İlerlemen yalnızca bu cihazda. Hesaba dönüştür; adın ve kalkanın korunur.",
+      "open": "Hesap oluştur",
+      "submit": "Hesaba Dönüştür",
+      "short": "Misafir kaptan · ilerlemen yalnızca bu cihazda"
+    },
+    "stats": {
+      "played": "Oyun",
+      "won": "Zafer",
+      "accuracy": "İsabet oranı"
+    },
+    "overline": "Kuzey Denizi Limanı",
+    "greetingTop": "Hoş geldin,",
+    "localTitle": "Limanda",
+    "localSub": "Tek cihaz",
+    "onlineTitle": "Açık Deniz",
+    "onlineSub": "Çevrimiçi"
+  },
+  "phase": {
+    "placement": "Filonu Yerleştir",
+    "battle": "Savaş"
+  },
+  "placement": {
+    "fleet": "Filon",
+    "progress": "{placed}/{total} gemi",
+    "cells": "{size} hücre",
+    "status": {
+      "placed": "Yerleşti",
+      "selected": "Seçili"
+    },
+    "rotate": "Döndür",
+    "random": "Rastgele Diz",
+    "clear": "Temizle",
+    "ready": "Savaşa Hazırım",
+    "hint": "Gemiyi seç, tahtaya tıkla ya da sürükle. R: döndür · Del: kaldır · Esc: bırak. Dokunmatikte uzun bas: döndür.",
+    "hintDone": "Filon hazır. İstersen gemileri sürükleyip yerlerini değiştir.",
+    "problems": {
+      "out_of_bounds": "Gemi tahtanın dışına taşıyor.",
+      "overlap": "Orada başka bir gemi var.",
+      "touching": "Gemiler birbirine değemez (çapraz dahil)."
+    },
+    "shipA11y": "{ship}, {size} hücre{status}"
+  },
+  "modes": {
+    "ai": "Bilgisayara Karşı · {level}",
+    "hotseat": "Aynı Cihazda 2 Kişi",
+    "online": "Çevrimiçi"
+  },
+  "aiNames": {
+    "easy": "Çırak Leif",
+    "normal": "Jarl Sigurd",
+    "hard": "Demir Ragnhild"
+  },
+  "battle": {
+    "yourTurn": "Sıra sende, Kaptan!",
+    "theirTurn": "{name} nişan alıyor…",
+    "round": "Tur {n}",
+    "ownFleet": "Kendi filon",
+    "enemyWaters": "Düşman suları",
+    "enemyFleet": "Düşman filosu",
+    "damage": "Hasar raporu",
+    "stats": "İstatistik",
+    "shots": "Atış",
+    "hits": "İsabet",
+    "accuracy": "Oran",
+    "log": "Seyir defteri",
+    "logEmpty": "Henüz top ateşlenmedi.",
+    "afloat": "Yüzüyor",
+    "sunk": "Battı",
+    "hitsOn": "{hits}/{size} isabet",
+    "logYou": "{cell} → {result}",
+    "logThem": "{name}: {cell} → {result}",
+    "logAuto": " (süre doldu)",
+    "result": {
+      "miss": "ıska",
+      "hit": "isabet!",
+      "sunk": "{ship} battı!"
+    },
+    "resign": "Teslim ol",
+    "resignConfirm": "Emin misin? Gemiler denize gömülür.",
+    "enlarge": "Büyüt",
+    "shrink": "Küçült",
+    "keyboardHint": "Ok tuşları: hedef · Enter: ateş",
+    "waitingPlacement": "{name} filosunu yerleştiriyor…",
+    "disconnected": "{name} bağlantısını kaybetti. {time} içinde dönmezse zafer senin.",
+    "devDisconnect": "Kopmayı dene (geliştirici)",
+    "devReconnect": "Geri bağla (geliştirici)",
+    "versus": "Rakip {n}"
+  },
+  "gameOver": {
+    "victory": "Zafer!",
+    "defeat": "Yenilgi",
+    "winnerIs": "{name} kazandı!",
+    "reasons": {
+      "allSunk": "Tüm filo denizin dibinde.",
+      "resign": "{name} teslim oldu.",
+      "disconnect": "{name} geri dönmedi; hükmen galibiyet."
+    },
+    "you": "Sen",
+    "turns": "{n} tur",
+    "rematch": "Rövanş",
+    "lobby": "Lobiye dön",
+    "theirFleet": "Rakibin filosu",
+    "yourFleet": "Senin filon",
+    "valhalla": "Valhalla seni bekler"
+  },
+  "hotseat": {
+    "title": "Aynı Cihazda 2 Kişi",
+    "secondName": "İkinci kaptanın adı",
+    "first": "Birinci kaptan",
+    "start": "Denize Açılın",
+    "hint": "Sırayla oynayacaksınız. Her sıra değişiminde ekran kapanır; cihazı rakibine ver.",
+    "handoffTitle": "Cihazı {name} kaptana ver",
+    "handoffHint": "{other}, bakma! Gemilerin gizli kalmalı.",
+    "handoffReady": "Hazırım, göster",
+    "placeHeading": "{name}, filonu yerleştir"
+  },
+  "room": {
+    "title": "Oda",
+    "code": "Oda kodu",
+    "copy": "Kodu kopyala",
+    "copied": "Kopyalandı!",
+    "share": "Linki paylaş",
+    "linkCopied": "Link panoya kopyalandı.",
+    "shareText": "Amiral Battı odama katıl: {url}",
+    "waiting": "Kaptan bekleniyor…",
+    "host": "Kaptan",
+    "ready": "Hazır",
+    "notReady": "Hazır değil",
+    "setReady": "Hazırım",
+    "unsetReady": "Hazır değilim",
+    "start": "Savaşı Başlat",
+    "leave": "Odadan ayrıl",
+    "kick": "At",
+    "startHint": "İki taraf da hazır olunca başlatabilirsin.",
+    "guestStartHint": "Kurucu savaşı başlatacak.",
+    "settings": "Oda ayarları",
+    "extraShot": "İsabette tekrar ateş",
+    "extraShotHint": "Vuran oyuncu bir kez daha ateş eder.",
+    "turnTime": "Tur süresi",
+    "unlimited": "Süresiz",
+    "seconds": "{n} sn",
+    "timeout": "Süre dolarsa",
+    "randomShot": "Rastgele atış",
+    "skipTurn": "Sıra kaybı",
+    "onlyHost": "Ayarları yalnızca kurucu değiştirebilir.",
+    "errors": {
+      "not_found": "Bu kodla açık bir oda yok.",
+      "full": "Oda dolu.",
+      "not_host": "Bunu yalnızca kurucu yapabilir.",
+      "not_in_room": "Bu odada değilsin.",
+      "not_ready": "İki taraf da hazır olmalı.",
+      "invalid_settings": "Geçersiz ayar."
+    },
+    "joining": "Odaya bağlanılıyor…"
+  },
+  "matchmaking": {
+    "title": "Rakip aranıyor",
+    "hint": "Denizlerde dolaşan kaptanlar taranıyor…",
+    "elapsed": "Geçen süre {time}",
+    "cancel": "İptal",
+    "found": "Rakip bulundu: {name}"
+  },
+  "chat": {
+    "title": "Sohbet",
+    "placeholder": "Mesaj yaz…",
+    "send": "Gönder",
+    "mute": "Sessize al",
+    "unmute": "Sesi aç",
+    "muted": "{name} sessize alındı",
+    "quick": {
+      "niceShot": "İyi atış!",
+      "notThisTime": "Bu sefer kaçmaz!",
+      "congrats": "Tebrikler, Kaptan"
+    },
+    "errors": {
+      "empty": "Boş mesaj gönderilemez.",
+      "too_long": "En fazla 200 karakter.",
+      "rate_limited": "Biraz yavaş, Kaptan. Birkaç saniye bekle."
+    },
+    "system": {
+      "joined": "{name} odaya katıldı.",
+      "left": "{name} odadan ayrıldı.",
+      "kicked": "{name} odadan çıkarıldı.",
+      "shipSunk": "{name} kaptanın {ship} gemisi battı!",
+      "gameStarted": "Savaş başladı. Rüzgâr arkanızda olsun!"
+    },
+    "empty": "Henüz mesaj yok. Selam ver!"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "sound": "Ses efektleri",
+    "soundHint": "Top, su sıçraması ve batma sesleri (yakında).",
+    "reduceMotion": "Hareketi azalt",
+    "reduceMotionHint": "Animasyonları kapatır."
+  }
+}

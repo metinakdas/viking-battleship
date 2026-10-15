@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "Amiral Battı",
+    "slug": "amiral-batti",
+    "version": "1.0.0",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#eaf0f5",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/favicon.png",
+      "name": "Amiral Battı",
+      "backgroundColor": "#eaf0f5",
+      "themeColor": "#eaf0f5"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 160,
+          "resizeMode": "contain",
+          "backgroundColor": "#eaf0f5"
+        }
+      ]
+    ],
+    "scheme": "amiralbatti",
+    "backgroundColor": "#eaf0f5",
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
