@@ -8,7 +8,7 @@ export type Coord = { readonly row: number; readonly col: number };
 
 export type Orientation = 'horizontal' | 'vertical';
 
-export type ShipType = 'drakkar' | 'snekkja' | 'karvi' | 'knarr' | 'faering';
+export type ShipType = 'galleon' | 'frigate' | 'corvette' | 'brig' | 'sloop';
 
 /** Bir geminin tahtadaki yeri. origin: sol üst (yatayda en sol, dikeyde en üst) hücre. */
 export type Placement = {

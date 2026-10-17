@@ -80,7 +80,7 @@ describe('yapay zekâ: güç sıralaması', () => {
     // 300 oyunluk ölçüm (ortalama atış): kolay 95, normal 50, zor 38. Sınırlar geniş tutuldu.
     expect(easy).toBeGreaterThan(80);
     expect(hard).toBeLessThan(45);
-  });
+  }, 30_000); // 120 tam oyun simülasyonu: yüklü makinede 5 sn sınırını aşabiliyor.
 });
 
 describe('yapay zekâ: hedefleme davranışı', () => {
@@ -120,12 +120,12 @@ describe('yapay zekâ: hedefleme davranışı', () => {
   });
 
   it('normal/zor: batık geminin çevresine ateş etmez', () => {
-    const faering: Placement = {
-      ship: 'faering',
+    const sloop: Placement = {
+      ship: 'sloop',
       origin: { row: 0, col: 0 },
       orientation: 'horizontal',
     };
-    const k = knowledgeFromShots([rec(0, 0, 'hit'), rec(0, 1, 'sunk', faering)], [faering]);
+    const k = knowledgeFromShots([rec(0, 0, 'hit'), rec(0, 1, 'sunk', sloop)], [sloop]);
     const forbidden = [
       { row: 0, col: 2 },
       { row: 1, col: 0 },
@@ -138,7 +138,7 @@ describe('yapay zekâ: hedefleme davranışı', () => {
         expect(forbidden).not.toContain(cellIndex(at));
       }
     }
-    expect(k.remaining).not.toContain('faering');
+    expect(k.remaining).not.toContain('sloop');
   });
 
   it('zor: yoğunluk haritası ortayı köşeden yüksek puanlar, ateş edilen hücre 0', () => {

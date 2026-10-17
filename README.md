@@ -1,7 +1,14 @@
 # Amiral Battı
 
-Viking temalı, macOS tarzı buzlu cam arayüzlü amiral battı. Expo (React Native + Web): aynı kod
-tarayıcıda ve iOS/Android'de çalışır.
+1600–1800 yelken çağında geçen, retro piksel (arcade) görünümlü amiral battı. Expo (React Native +
+Web): aynı kod tarayıcıda ve iOS/Android'de çalışır. Ekranlar yatayda 1920×1080, dikeyde (telefon)
+720×1280 tasarım tuvalinde çizilir ve pencereye oranla ölçeklenir; her ekranın mobil yerleşimi var.
+
+Diller: Türkçe, İngilizce, Almanca, Fransızca, İspanyolca, Arapça (sağdan sola). Temalar: gece
+(tasarım) ve gündüz (güneşli). İkisi de ayarlar (⚙) penceresinden değişir ve cihazda saklanır.
+
+Ses: menüde ve oyunda ayrı müzik, top/isabet/ıska/batış ve arayüz efektleri; seviyeleri ayarlardan.
+Hepsi telifsiz (CC0); kaynaklar `assets/sounds/CREDITS.md`.
 
 ## Çalıştırma
 
@@ -19,7 +26,11 @@ npx expo start           # telefonda Expo Go ile QR kodu okut
 | `npm run lint`          | ESLint (React Compiler kuralları dahil) |
 | `npm run format`        | Prettier                                |
 
-Geliştirici vitrini (tema, bileşenler, tahta ve gemiler): `/dev/ui`.
+Akış: Kapak (`/`) → Giriş (`/login`) → Filo yerleştirme → Savaş → Oyun sonu. Mod menüsü (`/lobby`)
+üst çubuktaki mod etiketinden açılır.
+Diğer ekranlar: kaptan kartı ve misafiri hesaba dönüştürme (`/profile`), rekor tablosu (`/scores`),
+kurallar (`/how-to`), oda (`/room/KOD`), eşleşme (`/matchmaking`). Skorlar ve oyun geçmişi cihazda
+saklanır (src/store/recordsStore.ts).
 
 ## Modlar
 
@@ -38,11 +49,13 @@ src/services/    Arayüzler + sahte (mock) uygulamalar. Gerçek sağlayıcılar 
   transport/     GameTransport arayüzü. GameHost: motor + tur saati + yapay zekâ + bağlantı kopması.
                  MockOnlineTransport: ağ gecikmeli sahte çevrimiçi.
   auth/ chat/ room/
-src/features/    Ekran bileşenleri (board, placement, battle, chat, room, lobby, auth, game).
+src/features/    arcade/: piksel tema, tuval (Stage), canvas animasyonları (gece denizi, ızgara),
+                 ekranlar. placement/ battle/: arayüzden bağımsız yerleştirme ve seyir defteri
+                 mantığı. game/: oyun akışı (tek koltuk, aynı cihaz).
 src/app/         expo-router ekranları; (app)/ grubu giriş ister.
-src/ui/          Tema token'ları ve ortak bileşenler.
-src/i18n/        Tüm metinler (tr.json).
-docs/            Başlangıç promptu ve tasarım kararları (docs/design/viking-tema.md).
+src/ui/          Yazı tipi haritası (Press Start 2P, VT323).
+src/i18n/        Tüm metinler: tr.json (kaynak) + en, de, fr, es, ar. Eksik çeviri derleme hatasıdır.
+amiral-batti.html: referans tasarım ekranları.
 ```
 
 Hile önleme: istemciye yalnızca `getPlayerView` gider; rakibin gemileri batana ya da oyun bitene

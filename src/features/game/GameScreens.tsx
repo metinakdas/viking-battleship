@@ -1,26 +1,94 @@
 import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 
-import { Avatar, SeaBackdrop } from '@/features/auth';
-import { BattleView, GameOverView } from '@/features/battle';
-import { ChatPanel } from '@/features/chat/ChatPanel';
-import { AppHeader } from '@/features/common/AppHeader';
-import { PlacementView } from '@/features/placement';
-import type { Seat } from '@/game';
-import { t } from '@/i18n';
-import type { Player } from '@/services/auth';
+import { Txt } from '@/features/arcade/kit';
+import { PxChat } from '@/features/arcade/PxChat';
+import { BattleScreen } from '@/features/arcade/screens/BattleScreen';
+import {
+  GameOverScreen,
+  HandoffScreen,
+  WaitingScreen,
+} from '@/features/arcade/screens/FlowScreens';
+import { PlacementScreen } from '@/features/arcade/screens/PlacementScreen';
+import { A, themed } from '@/features/arcade/theme';
+import { arcadeScore, leaderboard } from '@/features/records/score';
+import { goldDelta } from '@/features/shop/catalog';
+import { shotStats, type Seat } from '@/game';
+import { t, upperLocale } from '@/i18n';
 import { endSession, type GameSession } from '@/services/transport/sessions';
 import type { GameSnapshot, GameTransport } from '@/services/transport/types';
-import { AppText, Button, Card, colors, Pill, Screen, spacing, Vegvisir } from '@/ui';
+import { useRecordsStore } from '@/store/recordsStore';
+import { useWalletStore } from '@/store/walletStore';
 
-import { useGameSnapshot } from './hooks';
+import { formatSeconds, useCountdown, useGameSnapshot } from './hooks';
 
-export function modeLabelFor(session: GameSession): string {
-  if (session.mode === 'ai') {
-    return t('modes.ai', { level: t(`lobby.ai.levels.${session.level}`) });
-  }
-  return session.mode === 'hotseat' ? t('modes.hotseat') : t('modes.online');
+/** Tasarımdaki mod etiketi: "TEK OYUNCU · CPU". */
+export function arcadeModeLabel(session: GameSession): string {
+  if (session.mode === 'ai') return t('arcade.modes.ai');
+  return session.mode === 'hotseat' ? t('arcade.modes.hotseat') : t('arcade.modes.online');
+}
+
+const up = (s: string) => s.toLocaleUpperCase(upperLocale());
+
+/**
+ * Biten oyunu kaydeder (rekor tablosu, kaptan kartı). Kimlik oyunun izinden türetilir: aynı oyun iki
+ * kez yazılmaz (Strict Mode, yeniden render), rövanş yeni kayıt olur.
+ */
+function useGameResult(session: GameSession, snapshot: GameSnapshot, opponentName: string) {
+  const add = useRecordsStore((s) => s.add);
+  const reward = useWalletStore((s) => s.reward);
+  const records = useRecordsStore((s) => s.records);
+  const { view, me } = snapshot;
+  const finished = view.phase === 'finished';
+  const stats = shotStats(view.opponent.incoming);
+  const won = view.winner === view.mySeat;
+  const score = arcadeScore({ won, shots: stats.shots, hits: stats.hits });
+  const gold = goldDelta({
+    won,
+    mode: session.mode,
+    level: session.mode === 'ai' ? session.level : undefined,
+  });
+  const id = `${session.id}:${view.turnNumber}:${view.me.incoming.length}:${view.opponent.incoming.length}`;
+
+  useEffect(() => {
+    if (!finished) return;
+    add({
+      id,
+      at: Date.now(),
+      playerId: me.id,
+      playerName: me.displayName,
+      mode: session.mode,
+      opponentName,
+      won,
+      shots: stats.shots,
+      hits: stats.hits,
+      turns: Math.ceil(view.turnNumber / 2),
+      score,
+    });
+    // Altın: zaferde ödül, yenilgide ceza (aynı maç bir kez).
+    reward(me.id, id, gold);
+  }, [
+    reward,
+    gold,
+    finished,
+    add,
+    id,
+    me.id,
+    me.displayName,
+    session.mode,
+    opponentName,
+    won,
+    stats.shots,
+    stats.hits,
+    view.turnNumber,
+    score,
+  ]);
+
+  // Bu oyun tabloda birinci mi? (kendi kaydı hariç en yüksek skordan büyükse)
+  const others = records.filter((r) => r.id !== id);
+  const top = leaderboard(others, 1)[0]?.score ?? 0;
+  return { score, newHigh: finished && score > top, gold };
 }
 
 function toLobby(session: GameSession) {
@@ -37,50 +105,66 @@ export function SingleSeatGame({
   const transport: GameTransport = session.transport;
   const snapshot = useGameSnapshot(transport);
   const { view } = snapshot;
-  const label = modeLabelFor(session);
+  const label = arcadeModeLabel(session);
   const online = session.mode === 'online';
+  const opponentName = session.mode === 'ai' ? 'CPU' : up(snapshot.opponent.displayName);
+  const result = useGameResult(session, snapshot, opponentName);
 
   if (view.phase === 'placement' && !view.me.ready) {
     return (
-      <PlacementView
+      <PlacementScreen
         modeLabel={label}
+        onModePress={() => toLobby(session)}
+        onBack={() => toLobby(session)}
+        opponentName={opponentName}
+        opponentReady={view.opponent.ready}
         onReady={(fleet) => transport.send({ type: 'placeFleet', fleet })}
       />
     );
   }
   if (view.phase === 'placement') {
-    return <WaitingForOpponent snapshot={snapshot} modeLabel={label} />;
+    return (
+      <WaitingScreen
+        opponentName={opponentName}
+        modeLabel={label}
+        onLeave={() => toLobby(session)}
+      />
+    );
   }
   if (view.phase === 'finished') {
     return (
-      <GameOverView
+      <GameOverScreen
         snapshot={snapshot}
-        modeLabel={label}
+        opponentName={opponentName}
+        score={result.score}
+        newHigh={result.newHigh}
+        gold={result.gold}
         onRematch={() => transport.send({ type: 'rematch' })}
         onLobby={() => toLobby(session)}
       />
     );
   }
   return (
-    <BattleView
+    <BattleScreen
       snapshot={snapshot}
-      modeLabel={label}
       onFire={(at) => transport.send({ type: 'fire', at })}
       onResign={() => transport.send({ type: 'forfeit', reason: 'resign' })}
-      sidePanel={
+      onLeave={() => {
+        transport.send({ type: 'forfeit', reason: 'resign' });
+        toLobby(session);
+      }}
+      notice={online ? <ConnectionNotice session={session} snapshot={snapshot} /> : undefined}
+      chat={
         online ? (
-          <ChatPanel channel={session.channel} me={snapshot.me} opponent={snapshot.opponent} />
-        ) : null
-      }
-      extra={
-        online && __DEV__ ? <DevConnectionTools session={session} snapshot={snapshot} /> : null
+          <PxChat channel={session.channel} me={snapshot.me} opponent={snapshot.opponent} compact />
+        ) : undefined
       }
     />
   );
 }
 
-/** Geliştirici: bağlantı kopmasını dene (yalnızca __DEV__ ve sahte çevrimiçi). */
-function DevConnectionTools({
+/** Rakip koptuysa kırmızı uyarı + geri sayım; geliştirmede kopmayı dene düğmesi. */
+function ConnectionNotice({
   session,
   snapshot,
 }: {
@@ -88,40 +172,29 @@ function DevConnectionTools({
   snapshot: GameSnapshot;
 }) {
   const down = snapshot.opponentConnection === 'disconnected';
+  const left = useCountdown(snapshot.reconnectEndsAt);
   return (
-    <View style={styles.devRow}>
-      <Button
-        label={down ? t('battle.devReconnect') : t('battle.devDisconnect')}
-        variant="ghost"
-        onPress={() =>
-          down
-            ? session.transport.simulateOpponentReconnect()
-            : session.transport.simulateOpponentDisconnect()
-        }
-      />
+    <View style={styles.notice}>
+      {down ? (
+        <Txt size={32} align="center" color={A.red} role="alert">
+          {t('arcade.battle.disconnected', { time: left === null ? '' : formatSeconds(left) })}
+        </Txt>
+      ) : null}
+      {__DEV__ ? (
+        <Pressable
+          accessibilityRole="button"
+          onPress={() =>
+            down
+              ? session.transport.simulateOpponentReconnect()
+              : session.transport.simulateOpponentDisconnect()
+          }
+        >
+          <Txt size={26} align="center" color={A.faded}>
+            {down ? t('battle.devReconnect') : t('battle.devDisconnect')}
+          </Txt>
+        </Pressable>
+      ) : null}
     </View>
-  );
-}
-
-function WaitingForOpponent({
-  snapshot,
-  modeLabel,
-}: {
-  snapshot: GameSnapshot;
-  modeLabel: string;
-}) {
-  return (
-    <Screen contentStyle={styles.content}>
-      <AppHeader right={<Pill label={modeLabel} />} />
-      <Card style={styles.waitCard}>
-        <View style={styles.waitBody}>
-          <ActivityIndicator color={colors.gold} />
-          <AppText tone="secondary" align="center">
-            {t('battle.waitingPlacement', { name: snapshot.opponent.displayName })}
-          </AppText>
-        </View>
-      </Card>
-    </Screen>
   );
 }
 
@@ -137,6 +210,8 @@ export function HotseatGame({ session }: { session: Extract<GameSession, { mode:
   const [viewer, setViewer] = useState<Seat>(0);
   const [armed, setArmed] = useState(false);
   const phase = snaps[0].view.phase;
+  // Kayıt, cihazın sahibi (1. koltuk) adına.
+  useGameResult(session, snaps[0], up(snaps[0].opponent.displayName));
 
   // Bu anda cihazı kimin tutması gerektiği.
   const desired: Seat =
@@ -156,14 +231,11 @@ export function HotseatGame({ session }: { session: Extract<GameSession, { mode:
     return () => clearTimeout(id);
   }, [needsHandoff, phase, desired]);
 
-  const label = modeLabelFor(session);
-  const showHandoff = needsHandoff && (phase !== 'battle' || armed);
-
-  if (showHandoff) {
+  if (needsHandoff && (phase !== 'battle' || armed)) {
     return (
       <HandoffScreen
-        to={snaps[desired].me}
-        from={snaps[viewer].me}
+        to={snaps[desired].me.displayName}
+        from={snaps[viewer].me.displayName}
         onReady={() => {
           setViewer(desired);
           setArmed(false);
@@ -176,19 +248,22 @@ export function HotseatGame({ session }: { session: Extract<GameSession, { mode:
   const transport = session.transports[viewer];
   if (phase === 'placement') {
     return (
-      <PlacementView
+      <PlacementScreen
         key={viewer}
-        modeLabel={label}
-        heading={t('hotseat.placeHeading', { name: snapshot.me.displayName })}
+        modeLabel={arcadeModeLabel(session)}
+        onModePress={() => toLobby(session)}
+        onBack={() => toLobby(session)}
+        title={t('arcade.flow.placeTitle', { name: up(snapshot.me.displayName) })}
+        opponentName={up(snapshot.opponent.displayName)}
+        opponentReady={snapshot.view.opponent.ready}
         onReady={(fleet) => transport.send({ type: 'placeFleet', fleet })}
       />
     );
   }
   if (phase === 'finished') {
     return (
-      <GameOverView
+      <GameOverScreen
         snapshot={snapshot}
-        modeLabel={label}
         neutral
         onRematch={() => transport.send({ type: 'rematch' })}
         onLobby={() => toLobby(session)}
@@ -196,42 +271,21 @@ export function HotseatGame({ session }: { session: Extract<GameSession, { mode:
     );
   }
   return (
-    <BattleView
+    <BattleScreen
+      key={viewer}
       snapshot={snapshot}
-      modeLabel={`${label} · ${snapshot.me.displayName}`}
       onFire={(at) => transport.send({ type: 'fire', at })}
       onResign={() => transport.send({ type: 'forfeit', reason: 'resign' })}
+      onLeave={() => {
+        transport.send({ type: 'forfeit', reason: 'resign' });
+        toLobby(session);
+      }}
     />
   );
 }
 
-/** "Cihazı devret" perdesi. */
-function HandoffScreen({ to, from, onReady }: { to: Player; from: Player; onReady: () => void }) {
-  return (
-    <Screen backdrop={<SeaBackdrop />} contentStyle={styles.handoff}>
-      <Card highlighted style={styles.handoffCard}>
-        <View style={styles.handoffBody} accessibilityLiveRegion="assertive">
-          <Vegvisir size={56} />
-          <Avatar avatar={to.avatar} size={72} />
-          <AppText variant="h2" align="center">
-            {t('hotseat.handoffTitle', { name: to.displayName })}
-          </AppText>
-          <AppText tone="muted" align="center">
-            {t('hotseat.handoffHint', { other: from.displayName })}
-          </AppText>
-          <Button label={t('hotseat.handoffReady')} size="lg" fullWidth onPress={onReady} />
-        </View>
-      </Card>
-    </Screen>
-  );
-}
-
-const styles = StyleSheet.create({
-  content: { gap: spacing.xl, maxWidth: 1200, width: '100%', alignSelf: 'center' },
-  waitCard: { alignSelf: 'center', maxWidth: 480, width: '100%' },
-  waitBody: { alignItems: 'center', gap: spacing.md, paddingVertical: spacing.lg },
-  devRow: { alignItems: 'center' },
-  handoff: { justifyContent: 'center', alignItems: 'center' },
-  handoffCard: { width: '100%', maxWidth: 420 },
-  handoffBody: { alignItems: 'center', gap: spacing.md },
-});
+const styles = themed(() =>
+  StyleSheet.create({
+    notice: { gap: 6, alignItems: 'center' },
+  }),
+);

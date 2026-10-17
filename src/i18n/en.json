@@ -1,0 +1,473 @@
+{
+  "app": {
+    "title": "AMİRAL BATTI"
+  },
+  "common": {
+    "close": "Close",
+    "settings": "Settings"
+  },
+  "ships": {
+    "galleon": "Galleon",
+    "frigate": "Frigate",
+    "corvette": "Corvette",
+    "brig": "Brig",
+    "sloop": "Sloop"
+  },
+  "board": {
+    "cell": {
+      "miss": "{cell}, miss",
+      "hit": "{cell}, hit"
+    }
+  },
+  "auth": {
+    "errors": {
+      "invalid_email": "Enter a valid email.",
+      "weak_password": "Password must be at least 6 characters.",
+      "invalid_nickname": "Name must be 3–16 characters: letters, digits, space, _ and -.",
+      "email_taken": "An account with this email already exists.",
+      "invalid_credentials": "Wrong email or password.",
+      "not_guest": "This account is already registered.",
+      "not_signed_in": "You need to sign in first.",
+      "unknown": "Something went wrong. Try again.",
+      "required": "This field is required.",
+      "name_taken": "This captain name is taken."
+    }
+  },
+  "lobby": {
+    "join": {
+      "placeholder": "e.g. K7QM2X",
+      "invalid": "The code must be 6 letters/digits."
+    }
+  },
+  "aiNames": {
+    "easy": "Cabin Boy Leif",
+    "normal": "Jarl Sigurd",
+    "hard": "Iron Ragnhild"
+  },
+  "battle": {
+    "devDisconnect": "Simulate drop (dev)",
+    "devReconnect": "Reconnect (dev)"
+  },
+  "gameOver": {
+    "reasons": {
+      "allSunk": "The whole fleet lies on the seabed.",
+      "resign": "{name} surrendered.",
+      "disconnect": "{name} never came back; win by forfeit."
+    }
+  },
+  "room": {
+    "code": "Room code",
+    "copied": "Copied!",
+    "linkCopied": "Link copied to clipboard.",
+    "shareText": "Join my Amiral Battı room: {url}",
+    "startHint": "Start once both sides are ready.",
+    "guestStartHint": "The host will start the battle.",
+    "extraShot": "Fire again on a hit",
+    "extraShotHint": "A player who hits shoots once more.",
+    "turnTime": "Turn time",
+    "timeout": "When time runs out",
+    "randomShot": "Random shot",
+    "skipTurn": "Lose the turn",
+    "onlyHost": "Only the host can change settings.",
+    "errors": {
+      "not_found": "No open room with this code.",
+      "full": "The room is full.",
+      "not_host": "Only the host can do that.",
+      "not_in_room": "You are not in this room.",
+      "not_ready": "Both sides must be ready.",
+      "invalid_settings": "Invalid setting."
+    }
+  },
+  "chat": {
+    "title": "Chat",
+    "placeholder": "Type a message…",
+    "send": "Send",
+    "muted": "{name} is muted",
+    "quick": {
+      "niceShot": "Nice shot!",
+      "notThisTime": "Not this time!",
+      "congrats": "Well played, Captain"
+    },
+    "errors": {
+      "empty": "Can't send an empty message.",
+      "too_long": "200 characters max.",
+      "rate_limited": "Easy, Captain. Wait a few seconds."
+    },
+    "system": {
+      "joined": "{name} joined the room.",
+      "left": "{name} left the room.",
+      "kicked": "{name} was removed from the room.",
+      "shipSunk": "Captain {name}'s {ship} went down!",
+      "gameStarted": "The battle has begun. Fair winds!"
+    },
+    "empty": "No messages yet. Say ahoy!"
+  },
+  "arcade": {
+    "cover": {
+      "description": "Retro pixel naval battle with cannon-armed galleons.",
+      "chip1": "2 PLAYERS / CPU",
+      "chip2": "10 × 10 SEA",
+      "chip3": "5-SHIP FLEET",
+      "start": "▶ PRESS START"
+    },
+    "login": {
+      "tagline": "~ RULER OF THE SEAS ~",
+      "username": "USERNAME",
+      "password": "PASSWORD",
+      "email": "EMAIL",
+      "captainName": "CAPTAIN NAME",
+      "submit": "▶ SIGN IN",
+      "sail": "▶ SET SAIL",
+      "registerSubmit": "▶ SIGN UP",
+      "wait": "PLEASE WAIT…",
+      "guest": "PLAY AS GUEST",
+      "register": "SIGN UP ▸",
+      "back": "◂ BACK",
+      "footer": "◎ TAP THE SEA, SINK THE SHIPS",
+      "or": "OR",
+      "guestCta": "⚓ PLAY AS GUEST"
+    },
+    "header": {
+      "tagline": "RULER OF THE SEAS"
+    },
+    "steps": {
+      "placement": "1 · DEPLOY FLEET",
+      "placementDone": "FLEET",
+      "battle": "2 · BATTLE",
+      "battleDone": "BATTLE"
+    },
+    "settings": {
+      "title": "SETTINGS",
+      "motion": "REDUCE MOTION",
+      "on": "ON",
+      "off": "OFF",
+      "close": "CLOSE",
+      "language": "LANGUAGE",
+      "theme": "THEME",
+      "night": "NIGHT",
+      "day": "DAY",
+      "music": "MUSIC",
+      "sfx": "EFFECTS",
+      "reset": "↺ RESET TO DEFAULTS",
+      "resetConfirm": "SURE? TAP AGAIN",
+      "mute": "MUTE",
+      "unmute": "UNMUTE"
+    },
+    "confirm": {
+      "cancel": "CANCEL"
+    },
+    "placement": {
+      "ownWaters": "YOUR WATERS",
+      "opponent": "FOE: {name} · ",
+      "ready": "READY ✓",
+      "waiting": "DEPLOYING…",
+      "fleet": "FLEET",
+      "cells": "{n} TILES",
+      "dragging": "DRAG…",
+      "selected": "SELECTED",
+      "problems": {
+        "out_of_bounds": "The ship sticks out of the board.",
+        "overlap": "Another ship is already there.",
+        "touching": "Ships can't touch, not even diagonally."
+      },
+      "rotate": "↻ ROTATE",
+      "random": "RANDOM",
+      "clear": "CLEAR",
+      "readyButton": "READY FOR BATTLE ▶"
+    },
+    "modes": {
+      "ai": "1 PLAYER · CPU",
+      "hotseat": "2 PLAYERS · 1 DEVICE",
+      "online": "ONLINE"
+    },
+    "battle": {
+      "round": "ROUND {n}",
+      "resign": "SURRENDER",
+      "ownFleet": "YOUR FLEET",
+      "afloat": " AFLOAT",
+      "damage": "DAMAGE REPORT",
+      "yourTurn": "YOUR TURN!",
+      "theirTurn": "FOE IS AIMING…",
+      "enemyWaters": "ENEMY WATERS",
+      "shots": "SHOTS",
+      "hits": "HITS",
+      "accuracy": "RATE",
+      "enemy": "ENEMY",
+      "shipsLeft": " SHIPS LEFT",
+      "log": "SHIP'S LOG",
+      "logEmpty": "No cannon fired yet.",
+      "logYou": "YOU",
+      "logThem": "FOE",
+      "logHit": "HIT!",
+      "logHitMe": "YOU'RE HIT",
+      "logMiss": "MISS",
+      "logSunk": "{ship} SUNK!",
+      "logAuto": " (TIME)",
+      "fireTag": "{cell} FIRE!",
+      "fireAt": "{cell}, fire",
+      "resignTitle": "SURRENDER",
+      "resignMessage": "Are you sure, Captain? Your ships will sink and you'll lose the battle.",
+      "resignConfirm": "▶ SURRENDER",
+      "logTab": "LOG",
+      "disconnected": "FOE DISCONNECTED · {time}"
+    },
+    "chat": {
+      "tab": "CHAT",
+      "placeholder": "TYPE MESSAGE",
+      "mute": "MUTE",
+      "unmute": "UNMUTE"
+    },
+    "flow": {
+      "readyTitle": "FLEET READY!",
+      "waiting": "{name} IS DEPLOYING",
+      "menu": "◀ MAIN MENU",
+      "handoffKicker": "PASS THE DEVICE",
+      "handoffTitle": "CAPTAIN {name}",
+      "handoffHint": "{other}, NO PEEKING! KEEP YOUR SHIPS HIDDEN.",
+      "handoffReady": "▶ READY, SHOW ME",
+      "handoffBlink": "PRESS START",
+      "placeTitle": "{name}, DEPLOY FLEET"
+    },
+    "over": {
+      "victory": "VICTORY!",
+      "defeat": "DEFEAT",
+      "winnerIs": "{name} WINS!",
+      "theirFleet": "{name}'S FLEET",
+      "you": "YOU",
+      "rematch": "▶ REMATCH",
+      "menu": "◀ MAIN MENU",
+      "score": "SCORE",
+      "newHigh": "NEW RECORD!"
+    },
+    "menu": {
+      "title": "SELECT MODE",
+      "logout": "LOG OUT",
+      "level": "DIFFICULTY",
+      "levels": {
+        "easy": "EASY",
+        "normal": "NORMAL",
+        "hard": "HARD"
+      },
+      "secondName": "SECOND CAPTAIN",
+      "codePlaceholder": "ROOM CODE",
+      "ai": {
+        "title": "1 PLAYER · CPU",
+        "description": "Against the computer admiral. Pick a difficulty.",
+        "start": "▶ START BATTLE"
+      },
+      "hotseat": {
+        "title": "2 PLAYERS · 1 DEVICE",
+        "description": "Two captains, one device, taking turns.",
+        "start": "▶ SET SAIL"
+      },
+      "random": {
+        "title": "ONLINE · RANDOM",
+        "description": "Get matched with a captain at sea.",
+        "start": "▶ FIND FOE"
+      },
+      "room": {
+        "title": "ONLINE · CREATE ROOM",
+        "description": "Create a room and send the code to a friend.",
+        "start": "▶ CREATE ROOM"
+      },
+      "join": {
+        "title": "JOIN WITH CODE",
+        "description": "Enter your friend's room code.",
+        "start": "▶ JOIN ROOM"
+      },
+      "links": {
+        "profile": "PROFILE",
+        "scores": "SCORES",
+        "how": "RULES",
+        "shop": "MARKET"
+      }
+    },
+    "room": {
+      "chip": "ROOM · {code}",
+      "code": "ROOM CODE",
+      "copy": "COPY",
+      "share": "SHARE",
+      "ready": "▶ I'M READY",
+      "unready": "NOT READY",
+      "start": "▶ START BATTLE",
+      "leave": "◀ LEAVE ROOM",
+      "settings": "ROOM SETTINGS",
+      "unlimited": "NO LIMIT",
+      "seconds": "{n} S",
+      "waiting": "WAITING FOR CAPTAIN",
+      "waitingHint": "SEND THE CODE OR LINK",
+      "host": "HOST",
+      "guest": "GUEST",
+      "isReady": "READY ✓",
+      "notReady": "NOT READY",
+      "kick": "✕ REMOVE",
+      "joining": "JOINING ROOM",
+      "notFound": "ROOM NOT FOUND",
+      "copyCode": "COPY CODE",
+      "copyLink": "COPY LINK",
+      "copied": "COPIED ✓",
+      "whatsapp": "SHARE ON WHATSAPP"
+    },
+    "match": {
+      "title": "SEARCHING FOE",
+      "hint": "SCANNING CAPTAINS AT SEA",
+      "elapsed": "ELAPSED {time}",
+      "cancel": "◀ CANCEL"
+    },
+    "info": {
+      "back": "◀ MENU"
+    },
+    "scores": {
+      "title": "HIGH SCORES",
+      "rank": "RANK",
+      "name": "CAPTAIN",
+      "mode": "VOYAGE",
+      "score": "SCORE",
+      "legend": "LEGEND",
+      "hint": "HIT 1000 · WIN 10000 · EACH SHOT UNDER 100 IS 500",
+      "win": "WIN",
+      "loss": "LOSS",
+      "modes": {
+        "ai": "CPU",
+        "hotseat": "1 DEVICE",
+        "online": "ONLINE"
+      }
+    },
+    "profile": {
+      "kicker": "CAPTAIN CARD",
+      "guest": "GUEST CAPTAIN · PROGRESS ON THIS DEVICE ONLY",
+      "account": "ACCOUNT · {email}",
+      "played": "GAMES",
+      "won": "WINS",
+      "accuracy": "HIT RATE",
+      "best": "BEST SCORE",
+      "recent": "RECENT VOYAGES",
+      "noGames": "No voyages yet. Fire the first salvo, Captain!",
+      "versus": "VS {name}",
+      "upgradeTitle": "CREATE ACCOUNT",
+      "upgradeText": "Your name and scores are kept; sign in from any device.",
+      "upgradeSubmit": "▶ CREATE ACCOUNT",
+      "accountTitle": "ACCOUNT",
+      "accountText": "Sign in from any device with your username or email.",
+      "logout": "LOG OUT",
+      "scores": "HIGH SCORES ▶"
+    },
+    "how": {
+      "title": "HOW TO PLAY",
+      "fleet": "FLEET",
+      "cells": "{n} TILES",
+      "legend": "MARKERS",
+      "controls": "CONTROLS",
+      "play": "▶ START BATTLE",
+      "place": {
+        "title": "DEPLOY",
+        "text": "Place 5 ships on the 10×10 sea, horizontally or vertically. Ships can't touch."
+      },
+      "fire": {
+        "title": "FIRE",
+        "text": "Take turns picking a tile in enemy waters. Each shot is timed; if time runs out, a random shot is fired."
+      },
+      "sink": {
+        "title": "SINK THE FLEET",
+        "text": "A ship sinks when all its tiles are hit. First to sink the enemy fleet wins."
+      },
+      "marks": {
+        "ship": "SHIP",
+        "hit": "HIT",
+        "sunk": "SUNK SHIP",
+        "miss": "MISS",
+        "aim": "CROSSHAIR"
+      },
+      "keys": {
+        "aim": {
+          "key": "◀ ▲ ▼ ▶",
+          "text": "Aim (in battle)"
+        },
+        "fire": {
+          "key": "ENTER",
+          "text": "Fire · or tap a tile"
+        },
+        "rotate": {
+          "key": "R / RIGHT CLICK",
+          "text": "Rotate ship (deploying)"
+        },
+        "drag": {
+          "key": "DRAG",
+          "text": "Move a ship from the list to the sea"
+        }
+      }
+    },
+    "lost": {
+      "title": "LOST WATERS",
+      "text": "There's sea at these coordinates, but no ship. Head back to port, Captain.",
+      "home": "▶ MAIN MENU"
+    },
+    "lang": {
+      "title": "LANGUAGE",
+      "auto": "AUTO (BROWSER)"
+    },
+    "nav": {
+      "back": "BACK",
+      "leaveTitle": "LEAVE GAME",
+      "leaveMessage": "Going back to the menu counts as surrender. Sure, Captain?",
+      "leaveConfirm": "▶ LEAVE GAME"
+    },
+    "shop": {
+      "title": "MARKET",
+      "balance": "PURSE",
+      "tabs": {
+        "gold": "GOLD",
+        "ship": "SHIPS",
+        "ball": "CANNONBALLS",
+        "flame": "FLAMES",
+        "map": "MAPS"
+      },
+      "buy": "BUY",
+      "equip": "EQUIP",
+      "equipped": "EQUIPPED ✓",
+      "poor": "NOT ENOUGH GOLD",
+      "demo": "DEMO STORE · NO REAL PAYMENT",
+      "bonus": "+{n}% BONUS",
+      "bought": "+{n} GOLD ADDED TO YOUR PURSE",
+      "needRoom": "CREATING A ROOM COSTS {cost} GOLD",
+      "earn": "Win: CPU +30/+50/+80, online +100 · Loss −20",
+      "packs": {
+        "pouch": "POUCH",
+        "chest": "CHEST",
+        "hoard": "HOARD"
+      }
+    },
+    "items": {
+      "ship": {
+        "classic": "CLASSIC OAK",
+        "royal": "ROYAL BLUE",
+        "crimson": "CRIMSON PIRATE",
+        "blackpearl": "BLACK PEARL",
+        "ghost": "GHOST SHIP",
+        "golden": "GOLDEN FLEET"
+      },
+      "ball": {
+        "iron": "CAST IRON",
+        "chain": "CHAIN SHOT",
+        "fire": "FIRE SHOT",
+        "ice": "ICE SHOT",
+        "gold": "GOLDEN SHOT"
+      },
+      "flame": {
+        "classic": "CLASSIC FIRE",
+        "ghost": "GHOST FIRE",
+        "greek": "GREEK FIRE",
+        "cursed": "CURSED FLAME",
+        "phosphor": "PHOSPHOR"
+      },
+      "map": {
+        "ocean": "OPEN OCEAN",
+        "lagoon": "TROPICAL LAGOON",
+        "arctic": "ARCTIC SEA",
+        "emerald": "EMERALD COVE",
+        "abyss": "DEEP ABYSS",
+        "lava": "LAVA SEA"
+      }
+    }
+  }
+}

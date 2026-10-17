@@ -1,21 +1,21 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useRef, useState } from 'react';
-import { ActivityIndicator, StyleSheet, View } from 'react-native';
 
-import { AppHeader } from '@/features/common/AppHeader';
-import { RoomView } from '@/features/room/RoomView';
-import { t } from '@/i18n';
+import { PxButton, Txt } from '@/features/arcade/kit';
+import { BigTitle, CenterCard } from '@/features/arcade/screens/FlowScreens';
+import { RoomScreen } from '@/features/arcade/screens/RoomScreen';
+import { A } from '@/features/arcade/theme';
+import { t, upperLocale } from '@/i18n';
 import { services } from '@/services';
 import { isValidRoomCode, normalizeRoomCode } from '@/services/room/code';
 import { RoomError, type Room } from '@/services/room/types';
 import { useAuthStore } from '@/store/authStore';
-import { AppText, Button, Card, colors, Screen, spacing } from '@/ui';
 
 /**
  * /room/new → yeni oda kurar ve /room/KOD'a geçer.
  * /room/KOD → odaya katılır (link ya da kodla). Oyun başlayınca /game/[id].
  */
-export default function RoomScreen() {
+export default function RoomRoute() {
   const { code: raw } = useLocalSearchParams<{ code: string }>();
   const player = useAuthStore((s) => s.player);
   const [room, setRoom] = useState<Room | null>(null);
@@ -59,39 +59,28 @@ export default function RoomScreen() {
   if (!player) return null;
   if (error || room?.status === 'closed') {
     return (
-      <Screen contentStyle={styles.content}>
-        <AppHeader />
-        <Card style={styles.card}>
-          <View style={styles.body}>
-            <AppText style={{ color: colors.danger }} role="alert">
-              {error ?? t('room.errors.not_found')}
-            </AppText>
-            <Button
-              label={t('gameOver.lobby')}
-              variant="secondary"
-              onPress={() => router.replace('/lobby')}
-            />
-          </View>
-        </Card>
-      </Screen>
+      <CenterCard chip={t('arcade.modes.online')}>
+        <BigTitle color={A.red}>{t('arcade.room.notFound')}</BigTitle>
+        <Txt size={34} align="center" color={A.textSoft} role="alert">
+          {(error ?? t('room.errors.not_found')).toLocaleUpperCase(upperLocale())}
+        </Txt>
+        <PxButton
+          label={t('arcade.flow.menu')}
+          variant="secondary"
+          onPress={() => router.replace('/lobby')}
+          style={{ alignSelf: 'stretch' }}
+        />
+      </CenterCard>
     );
   }
   if (!room) {
     return (
-      <Screen contentStyle={styles.content}>
-        <AppHeader />
-        <View style={styles.body}>
-          <ActivityIndicator color={colors.gold} />
-          <AppText tone="muted">{t('room.joining')}</AppText>
-        </View>
-      </Screen>
+      <CenterCard>
+        <Txt font="press" size={28} align="center" color={A.yellow}>
+          {t('arcade.room.joining')}
+        </Txt>
+      </CenterCard>
     );
   }
-  return <RoomView room={room} me={player} onLeave={leave} />;
+  return <RoomScreen room={room} me={player} onLeave={leave} />;
 }
-
-const styles = StyleSheet.create({
-  content: { gap: spacing.xl, maxWidth: 1200, width: '100%', alignSelf: 'center' },
-  card: { alignSelf: 'center', maxWidth: 480, width: '100%' },
-  body: { alignItems: 'center', gap: spacing.md, paddingVertical: spacing.lg },
-});

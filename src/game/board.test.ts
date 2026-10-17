@@ -53,13 +53,13 @@ describe('board', () => {
 
   it('gemi hücreleri yön ve boyuta göre', () => {
     expect(
-      shipCells({ ship: 'faering', origin: { row: 2, col: 3 }, orientation: 'horizontal' }),
+      shipCells({ ship: 'sloop', origin: { row: 2, col: 3 }, orientation: 'horizontal' }),
     ).toEqual([
       { row: 2, col: 3 },
       { row: 2, col: 4 },
     ]);
     expect(
-      shipCells({ ship: 'drakkar', origin: { row: 1, col: 1 }, orientation: 'vertical' }).map(
+      shipCells({ ship: 'galleon', origin: { row: 1, col: 1 }, orientation: 'vertical' }).map(
         coordLabel,
       ),
     ).toEqual(['B2', 'B3', 'B4', 'B5', 'B6']);
@@ -67,10 +67,10 @@ describe('board', () => {
 
   it('hale: ortadaki 2lik gemi için 10 hücre, köşede 4', () => {
     expect(
-      shipHalo({ ship: 'faering', origin: { row: 5, col: 5 }, orientation: 'horizontal' }),
+      shipHalo({ ship: 'sloop', origin: { row: 5, col: 5 }, orientation: 'horizontal' }),
     ).toHaveLength(10);
     expect(
-      shipHalo({ ship: 'faering', origin: { row: 0, col: 0 }, orientation: 'horizontal' }),
+      shipHalo({ ship: 'sloop', origin: { row: 0, col: 0 }, orientation: 'horizontal' }),
     ).toHaveLength(4);
   });
 });

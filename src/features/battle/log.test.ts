@@ -9,7 +9,7 @@ describe('seyir defteri', () => {
   it('iki tarafın atışları sırayla, en yeni üstte', () => {
     let s = battleState();
     s = fire(s, 0, SAFE_MISSES[0]!); // tur 1: ben ıska
-    s = fire(s, 1, { row: 0, col: 0 }); // tur 2: rakip isabet (drakkar)
+    s = fire(s, 1, { row: 0, col: 0 }); // tur 2: rakip isabet (galleon)
     s = fire(s, 0, { row: 8, col: 8 }); // tur 3: ben isabet
     const log = buildLog(getPlayerView(s, 0));
     expect(log.map((e) => [e.turn, e.actor, e.cell, e.result])).toEqual([
@@ -27,7 +27,7 @@ describe('seyir defteri', () => {
     s = applyAction(s, { type: 'timeout', seat: 1 });
     const log = buildLog(getPlayerView(s, 0));
     expect(log[0]).toMatchObject({ actor: 'them', auto: true });
-    expect(log.find((e) => e.result === 'sunk')).toMatchObject({ ship: 'faering', actor: 'me' });
+    expect(log.find((e) => e.result === 'sunk')).toMatchObject({ ship: 'sloop', actor: 'me' });
   });
 
   it('hasar raporu: gemi başına isabet ve batma', () => {
@@ -36,14 +36,14 @@ describe('seyir defteri', () => {
     s = fire(s, 1, { row: 8, col: 8 });
     s = fire(s, 1, { row: 8, col: 9 });
     const report = damageReport(getPlayerView(s, 0));
-    expect(report.find((r) => r.ship === 'drakkar')).toEqual({
-      ship: 'drakkar',
+    expect(report.find((r) => r.ship === 'galleon')).toEqual({
+      ship: 'galleon',
       size: 5,
       hits: 1,
       sunk: false,
     });
-    expect(report.find((r) => r.ship === 'faering')).toEqual({
-      ship: 'faering',
+    expect(report.find((r) => r.ship === 'sloop')).toEqual({
+      ship: 'sloop',
       size: 2,
       hits: 2,
       sunk: true,

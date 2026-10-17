@@ -28,6 +28,7 @@ export type AuthErrorCode =
   | 'weak_password'
   | 'invalid_nickname'
   | 'email_taken'
+  | 'name_taken'
   | 'invalid_credentials'
   | 'not_guest'
   | 'not_signed_in';
@@ -52,7 +53,8 @@ export type AuthListener = (player: Player | null) => void;
 export interface AuthService {
   /** Uygulama açılışında kayıtlı oturumu yükler. */
   getCurrentUser(): Promise<Player | null>;
-  loginWithEmail(email: string, password: string): Promise<Player>;
+  /** Kullanıcı adı ya da e-posta + şifre. */
+  login(identifier: string, password: string): Promise<Player>;
   register(input: RegisterInput): Promise<Player>;
   continueAsGuest(nickname: string, avatar?: AvatarId): Promise<Player>;
   /** Misafiri hesaba yükseltir; oyuncu kimliği (id) korunur. */

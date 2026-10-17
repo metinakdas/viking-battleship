@@ -5,13 +5,13 @@
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#eaf0f5",
+        "backgroundColor": "#07071c",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -23,8 +23,8 @@
       "output": "single",
       "favicon": "./assets/favicon.png",
       "name": "Amiral Battı",
-      "backgroundColor": "#eaf0f5",
-      "themeColor": "#eaf0f5"
+      "backgroundColor": "#07071c",
+      "themeColor": "#07071c"
     },
     "plugins": [
       "expo-router",
@@ -35,12 +35,20 @@
           "image": "./assets/splash-icon.png",
           "imageWidth": 160,
           "resizeMode": "contain",
-          "backgroundColor": "#eaf0f5"
+          "backgroundColor": "#07071c"
         }
-      ]
+      ],
+      [
+        "expo-audio",
+        {
+          "microphonePermission": false,
+          "recordAudioAndroid": false
+        }
+      ],
+      "expo-asset"
     ],
     "scheme": "amiralbatti",
-    "backgroundColor": "#eaf0f5",
+    "backgroundColor": "#07071c",
     "experiments": {
       "typedRoutes": true
     }

@@ -62,9 +62,14 @@ export class MockAuthService implements AuthService {
     return session?.player ?? null;
   }
 
-  async loginWithEmail(email: string, password: string): Promise<Player> {
+  /** Kullanıcı adı ya da e-posta ile giriş. */
+  async login(identifier: string, password: string): Promise<Player> {
     await this.delay();
-    const account = (await this.accounts())[normalizeEmail(email)];
+    const accounts = await this.accounts();
+    const name = normalizeNickname(identifier).toLocaleLowerCase('tr');
+    const account =
+      accounts[normalizeEmail(identifier)] ??
+      Object.values(accounts).find((a) => a.player.displayName.toLocaleLowerCase('tr') === name);
     if (!account || account.passwordHash !== mockHash(password)) {
       throw new AuthError('invalid_credentials');
     }
@@ -136,6 +141,13 @@ export class MockAuthService implements AuthService {
 
     const accounts = await this.accounts();
     if (accounts[email]) throw new AuthError('email_taken');
+    // Kullanıcı adıyla giriş yapılabildiği için ad da benzersiz olmalı (misafirin kendi adı hariç).
+    const wanted = normalizeNickname(input.displayName).toLocaleLowerCase('tr');
+    if (
+      Object.values(accounts).some((a) => a.player.displayName.toLocaleLowerCase('tr') === wanted)
+    ) {
+      throw new AuthError('name_taken');
+    }
 
     const player: Player = {
       id,

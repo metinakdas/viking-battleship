@@ -8,8 +8,14 @@ import { useLayoutEffect, useMemo, useRef, useState, type Dispatch } from 'react
 import { Animated, type View } from 'react-native';
 import { Gesture } from 'react-native-gesture-handler';
 
-import { cellFromPoint } from '@/features/board';
-import { sameCoord, shipSize, type Coord, type Orientation, type ShipType } from '@/game';
+import {
+  BOARD_SIZE,
+  sameCoord,
+  shipSize,
+  type Coord,
+  type Orientation,
+  type ShipType,
+} from '@/game';
 
 import {
   grabOffset,
@@ -194,4 +200,12 @@ export function useBoardDrag({ state, dispatch, cellSize, gridOffset }: Options)
   }, [dispatch, ghost]);
 
   return { drag, ghost, rootRef, boardRef, ...api };
+}
+
+/** Izgaranın sol üstüne göre bir noktanın hücresi (dışındaysa null). */
+export function cellFromPoint(x: number, y: number, cellSize: number): Coord | null {
+  const col = Math.floor(x / cellSize);
+  const row = Math.floor(y / cellSize);
+  if (row < 0 || col < 0 || row >= BOARD_SIZE || col >= BOARD_SIZE) return null;
+  return { row, col };
 }

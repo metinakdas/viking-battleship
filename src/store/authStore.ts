@@ -10,7 +10,7 @@ type AuthState = {
   player: Player | null;
   /** Uygulama açılışında bir kez: kayıtlı oturumu yükler ve değişikliklere abone olur. */
   init(): Promise<void>;
-  loginWithEmail(email: string, password: string): Promise<void>;
+  login(identifier: string, password: string): Promise<void>;
   register(input: RegisterInput): Promise<void>;
   continueAsGuest(nickname: string, avatar?: AvatarId): Promise<void>;
   upgradeGuestToAccount(input: RegisterInput): Promise<void>;
@@ -37,8 +37,8 @@ export const useAuthStore = create<AuthState>()((set) => ({
     set({ player, status: player ? 'signedIn' : 'signedOut' });
   },
 
-  async loginWithEmail(email, password) {
-    await services.auth.loginWithEmail(email, password);
+  async login(identifier, password) {
+    await services.auth.login(identifier, password);
   },
   async register(input) {
     await services.auth.register(input);

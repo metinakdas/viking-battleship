@@ -33,7 +33,7 @@ describe('oluşturma ve lobi', () => {
     expect(s.phase).toBe('lobby');
     expect(s.settings).toEqual(DEFAULT_SETTINGS);
     expect(s.settings.extraShotOnHit).toBe(false);
-    expect(s.settings.turnSeconds).toBe(30);
+    expect(s.settings.turnSeconds).toBe(20);
     expect(s.version).toBe(0);
   });
 
@@ -307,7 +307,7 @@ describe('yardımcılar', () => {
   });
 
   it('afloatShips', () => {
-    expect(afloatShips(['faering', 'drakkar'])).toEqual(['snekkja', 'karvi', 'knarr']);
+    expect(afloatShips(['sloop', 'galleon'])).toEqual(['frigate', 'corvette', 'brig']);
   });
 
   it('örnek filo 17 hücre', () => {

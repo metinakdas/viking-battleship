@@ -5,15 +5,15 @@ import type { Coord, Fleet, GameState, Seat } from './types';
 
 /**
  * Elle kurulan, kurallara uygun sabit filo:
- *   drakkar  A1–E1 (yatay)     snekkja  A3–A6 (dikey)
- *   karvi    C3–E3 (yatay)     knarr    G1–G3 (dikey)    faering  I9–J9 (yatay)
+ *   galleon  A1–E1 (yatay)     frigate  A3–A6 (dikey)
+ *   corvette C3–E3 (yatay)     brig     G1–G3 (dikey)    sloop  I9–J9 (yatay)
  */
 export const FLEET_A: Fleet = [
-  { ship: 'drakkar', origin: { row: 0, col: 0 }, orientation: 'horizontal' },
-  { ship: 'snekkja', origin: { row: 2, col: 0 }, orientation: 'vertical' },
-  { ship: 'karvi', origin: { row: 2, col: 2 }, orientation: 'horizontal' },
-  { ship: 'knarr', origin: { row: 0, col: 6 }, orientation: 'vertical' },
-  { ship: 'faering', origin: { row: 8, col: 8 }, orientation: 'horizontal' },
+  { ship: 'galleon', origin: { row: 0, col: 0 }, orientation: 'horizontal' },
+  { ship: 'frigate', origin: { row: 2, col: 0 }, orientation: 'vertical' },
+  { ship: 'corvette', origin: { row: 2, col: 2 }, orientation: 'horizontal' },
+  { ship: 'brig', origin: { row: 0, col: 6 }, orientation: 'vertical' },
+  { ship: 'sloop', origin: { row: 8, col: 8 }, orientation: 'horizontal' },
 ];
 
 /** FLEET_A'nın tüm gemi hücreleri. */

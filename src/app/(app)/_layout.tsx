@@ -2,7 +2,8 @@ import { Redirect, Stack, usePathname } from 'expo-router';
 import { useState } from 'react';
 
 import { useAuthStore } from '@/store/authStore';
-import { colors } from '@/ui';
+import { Rekey } from '@/features/arcade/Rekey';
+import { A } from '@/features/arcade/theme';
 
 /**
  * Giriş gerektiren tüm ekranlar. Girişsiz gelen (ör. paylaşılan oda linki) giriş ekranına,
@@ -16,16 +17,17 @@ export default function AppLayout() {
   const [requestedPath] = useState(pathname);
 
   if (status === 'signedOut') {
-    return <Redirect href={{ pathname: '/', params: { next: requestedPath } }} />;
+    return <Redirect href={{ pathname: '/login', params: { next: requestedPath } }} />;
   }
 
   return (
     <Stack
       screenOptions={{
         headerShown: false,
-        contentStyle: { backgroundColor: colors.wallpaper },
+        contentStyle: { backgroundColor: A.bg },
         animation: 'fade',
       }}
+      screenLayout={({ children }) => <Rekey>{children}</Rekey>}
     />
   );
 }

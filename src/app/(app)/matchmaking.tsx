@@ -1,22 +1,21 @@
 import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { Animated, Easing, StyleSheet, View } from 'react-native';
 
-import { AppHeader } from '@/features/common/AppHeader';
-import { formatSeconds, useReducedMotion } from '@/features/game/hooks';
+import { A } from '@/features/arcade/theme';
+import { PxButton, Txt, useBlink } from '@/features/arcade/kit';
+import { BigTitle, CenterCard } from '@/features/arcade/screens/FlowScreens';
+import { formatSeconds } from '@/features/game/hooks';
 import { t } from '@/i18n';
 import { services } from '@/services';
 import { MatchmakingCancelled } from '@/services/room/types';
 import { useAuthStore } from '@/store/authStore';
-import { AppText, Button, Card, Screen, spacing, Vegvisir } from '@/ui';
 
-/** "Rakip aranıyor": dönen Vegvísir, geçen süre, İptal. */
+/** "Rakip aranıyor": yanıp sönen radar, geçen süre, İptal. */
 export default function MatchmakingScreen() {
   const player = useAuthStore((s) => s.player);
   const [started] = useState(() => Date.now());
   const [now, setNow] = useState(started);
-  const reduced = useReducedMotion();
-  const [spin] = useState(() => new Animated.Value(0));
+  const blink = useBlink(400);
 
   useEffect(() => {
     if (!player) return;
@@ -38,54 +37,25 @@ export default function MatchmakingScreen() {
     return () => clearInterval(id);
   }, []);
 
-  useEffect(() => {
-    if (reduced) return;
-    const loop = Animated.loop(
-      Animated.timing(spin, {
-        toValue: 1,
-        duration: 6000,
-        easing: Easing.linear,
-        useNativeDriver: false,
-      }),
-    );
-    loop.start();
-    return () => loop.stop();
-  }, [reduced, spin]);
-
-  const rotate = spin.interpolate({ inputRange: [0, 1], outputRange: ['0deg', '360deg'] });
+  const dots = '■'.repeat(1 + (Math.floor((now - started) / 500) % 3));
   return (
-    <Screen contentStyle={styles.content}>
-      <AppHeader />
-      <Card highlighted style={styles.card}>
-        <View style={styles.body} accessibilityLiveRegion="polite">
-          <Animated.View style={reduced ? undefined : { transform: [{ rotate }] }}>
-            <Vegvisir size={96} />
-          </Animated.View>
-          <AppText variant="h2" align="center">
-            {t('matchmaking.title')}
-          </AppText>
-          <AppText tone="muted" align="center">
-            {t('matchmaking.hint')}
-          </AppText>
-          <AppText variant="bodyStrong" tone="gold">
-            {t('matchmaking.elapsed', {
-              time: formatSeconds(Math.floor((now - started) / 1000)),
-            })}
-          </AppText>
-          <Button
-            label={t('matchmaking.cancel')}
-            variant="secondary"
-            fullWidth
-            onPress={() => router.replace('/lobby')}
-          />
-        </View>
-      </Card>
-    </Screen>
+    <CenterCard chip={t('arcade.modes.online')}>
+      <BigTitle>{t('arcade.match.title')}</BigTitle>
+      <Txt size={34} align="center" color={A.textSoft} accessibilityLiveRegion="polite">
+        {t('arcade.match.hint')}
+      </Txt>
+      <Txt font="press" size={28} align="center" color={blink ? A.yellow : A.orangeSh} aria-hidden>
+        {dots.padEnd(3, ' ')}
+      </Txt>
+      <Txt size={36} color={A.cyan}>
+        {t('arcade.match.elapsed', { time: formatSeconds(Math.floor((now - started) / 1000)) })}
+      </Txt>
+      <PxButton
+        label={t('arcade.match.cancel')}
+        variant="secondary"
+        onPress={() => router.replace('/lobby')}
+        style={{ alignSelf: 'stretch' }}
+      />
+    </CenterCard>
   );
 }
-
-const styles = StyleSheet.create({
-  content: { gap: spacing.xl, maxWidth: 1200, width: '100%', alignSelf: 'center' },
-  card: { alignSelf: 'center', width: '100%', maxWidth: 420 },
-  body: { alignItems: 'center', gap: spacing.md },
-});

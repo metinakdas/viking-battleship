@@ -88,7 +88,7 @@ describe('MockAuthService: hesap', () => {
     const reg = await auth.register(ACCOUNT);
     expect(reg).toMatchObject({ id: 'usr_1', displayName: 'Ragnar', isGuest: false });
     await auth.logout();
-    const login = await auth.loginWithEmail('  ragnar@kattegat.NO ', 'valhalla');
+    const login = await auth.login('  ragnar@kattegat.NO ', 'valhalla');
     expect(login).toEqual(reg);
     expect(await auth.getProfile(reg.id)).toMatchObject({
       email: 'ragnar@kattegat.no',
@@ -97,11 +97,22 @@ describe('MockAuthService: hesap', () => {
     });
   });
 
+  it('kullanıcı adıyla giriş (büyük/küçük harf duyarsız); ad benzersiz', async () => {
+    const { auth } = setup();
+    const reg = await auth.register(ACCOUNT);
+    await auth.logout();
+    expect(await auth.login('  RAGNAR ', 'valhalla')).toEqual(reg);
+    await expectAuthError(
+      auth.register({ ...ACCOUNT, email: 'baska@kattegat.no', displayName: 'ragnar' }),
+      'name_taken',
+    );
+  });
+
   it('yanlış şifre ve bilinmeyen e-posta aynı hatayı verir (hesap varlığı sızmaz)', async () => {
     const { auth } = setup();
     await auth.register(ACCOUNT);
-    await expectAuthError(auth.loginWithEmail(ACCOUNT.email, 'yanlış1'), 'invalid_credentials');
-    await expectAuthError(auth.loginWithEmail('yok@yok.com', 'valhalla'), 'invalid_credentials');
+    await expectAuthError(auth.login(ACCOUNT.email, 'yanlış1'), 'invalid_credentials');
+    await expectAuthError(auth.login('yok@yok.com', 'valhalla'), 'invalid_credentials');
   });
 
   it('kayıt doğrulamaları', async () => {

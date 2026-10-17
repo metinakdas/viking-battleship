@@ -1,0 +1,473 @@
+{
+  "app": {
+    "title": "AMİRAL BATTI"
+  },
+  "common": {
+    "close": "Schließen",
+    "settings": "Einstellungen"
+  },
+  "ships": {
+    "galleon": "Galeone",
+    "frigate": "Fregatte",
+    "corvette": "Korvette",
+    "brig": "Brigg",
+    "sloop": "Schaluppe"
+  },
+  "board": {
+    "cell": {
+      "miss": "{cell}, Fehlschuss",
+      "hit": "{cell}, Treffer"
+    }
+  },
+  "auth": {
+    "errors": {
+      "invalid_email": "Gib eine gültige E-Mail ein.",
+      "weak_password": "Das Passwort braucht mindestens 6 Zeichen.",
+      "invalid_nickname": "Name: 3–16 Zeichen; Buchstaben, Ziffern, Leerzeichen, _ und -.",
+      "email_taken": "Mit dieser E-Mail gibt es schon ein Konto.",
+      "invalid_credentials": "E-Mail oder Passwort falsch.",
+      "not_guest": "Dieses Konto ist bereits registriert.",
+      "not_signed_in": "Bitte zuerst anmelden.",
+      "unknown": "Etwas ist schiefgelaufen. Versuch es noch einmal.",
+      "required": "Dieses Feld ist erforderlich.",
+      "name_taken": "Dieser Kapitänsname ist vergeben."
+    }
+  },
+  "lobby": {
+    "join": {
+      "placeholder": "z. B. K7QM2X",
+      "invalid": "Der Code hat 6 Buchstaben/Ziffern."
+    }
+  },
+  "aiNames": {
+    "easy": "Schiffsjunge Leif",
+    "normal": "Jarl Sigurd",
+    "hard": "Eiserne Ragnhild"
+  },
+  "battle": {
+    "devDisconnect": "Abbruch testen (Dev)",
+    "devReconnect": "Neu verbinden (Dev)"
+  },
+  "gameOver": {
+    "reasons": {
+      "allSunk": "Die ganze Flotte liegt auf dem Meeresgrund.",
+      "resign": "{name} hat kapituliert.",
+      "disconnect": "{name} kam nicht zurück; Sieg kampflos."
+    }
+  },
+  "room": {
+    "code": "Raumcode",
+    "copied": "Kopiert!",
+    "linkCopied": "Link in die Zwischenablage kopiert.",
+    "shareText": "Komm in meinen Amiral-Battı-Raum: {url}",
+    "startHint": "Starte, sobald beide bereit sind.",
+    "guestStartHint": "Der Gastgeber startet die Schlacht.",
+    "extraShot": "Nach Treffer erneut feuern",
+    "extraShotHint": "Wer trifft, schießt noch einmal.",
+    "turnTime": "Zugzeit",
+    "timeout": "Wenn die Zeit abläuft",
+    "randomShot": "Zufallsschuss",
+    "skipTurn": "Zug verfällt",
+    "onlyHost": "Nur der Gastgeber ändert Einstellungen.",
+    "errors": {
+      "not_found": "Kein offener Raum mit diesem Code.",
+      "full": "Der Raum ist voll.",
+      "not_host": "Das darf nur der Gastgeber.",
+      "not_in_room": "Du bist nicht in diesem Raum.",
+      "not_ready": "Beide Seiten müssen bereit sein.",
+      "invalid_settings": "Ungültige Einstellung."
+    }
+  },
+  "chat": {
+    "title": "Chat",
+    "placeholder": "Nachricht schreiben…",
+    "send": "Senden",
+    "muted": "{name} ist stummgeschaltet",
+    "quick": {
+      "niceShot": "Guter Schuss!",
+      "notThisTime": "Diesmal nicht!",
+      "congrats": "Glückwunsch, Kapitän"
+    },
+    "errors": {
+      "empty": "Leere Nachrichten gehen nicht.",
+      "too_long": "Höchstens 200 Zeichen.",
+      "rate_limited": "Langsam, Kapitän. Warte ein paar Sekunden."
+    },
+    "system": {
+      "joined": "{name} ist beigetreten.",
+      "left": "{name} hat den Raum verlassen.",
+      "kicked": "{name} wurde entfernt.",
+      "shipSunk": "Die {ship} von Kapitän {name} ist gesunken!",
+      "gameStarted": "Die Schlacht beginnt. Mast- und Schotbruch!"
+    },
+    "empty": "Noch keine Nachrichten. Sag Ahoi!"
+  },
+  "arcade": {
+    "cover": {
+      "description": "Retro-Pixel-Seeschlacht mit kanonenbewehrten Galeonen.",
+      "chip1": "2 SPIELER / CPU",
+      "chip2": "10 × 10 MEER",
+      "chip3": "5 SCHIFFE",
+      "start": "▶ PRESS START"
+    },
+    "login": {
+      "tagline": "~ HERR DER MEERE ~",
+      "username": "BENUTZERNAME",
+      "password": "PASSWORT",
+      "email": "E-MAIL",
+      "captainName": "KAPITÄNSNAME",
+      "submit": "▶ ANMELDEN",
+      "sail": "▶ IN SEE STECHEN",
+      "registerSubmit": "▶ REGISTRIEREN",
+      "wait": "BITTE WARTEN…",
+      "guest": "ALS GAST",
+      "register": "REGISTRIEREN ▸",
+      "back": "◂ ZURÜCK",
+      "footer": "◎ TIPP AUFS MEER, VERSENKE SCHIFFE",
+      "or": "ODER",
+      "guestCta": "⚓ ALS GAST SPIELEN"
+    },
+    "header": {
+      "tagline": "HERR DER MEERE"
+    },
+    "steps": {
+      "placement": "1 · FLOTTE",
+      "placementDone": "FLOTTE",
+      "battle": "2 · SCHLACHT",
+      "battleDone": "SCHLACHT"
+    },
+    "settings": {
+      "title": "EINSTELLUNGEN",
+      "motion": "WENIGER BEWEGUNG",
+      "on": "AN",
+      "off": "AUS",
+      "close": "SCHLIESSEN",
+      "language": "SPRACHE",
+      "theme": "THEMA",
+      "night": "NACHT",
+      "day": "TAG",
+      "music": "MUSIK",
+      "sfx": "EFFEKTE",
+      "reset": "↺ ZURÜCKSETZEN",
+      "resetConfirm": "SICHER? NOCHMAL TIPPEN",
+      "mute": "STUMM",
+      "unmute": "TON AN"
+    },
+    "confirm": {
+      "cancel": "ABBRECHEN"
+    },
+    "placement": {
+      "ownWaters": "DEINE GEWÄSSER",
+      "opponent": "GEGNER: {name} · ",
+      "ready": "BEREIT ✓",
+      "waiting": "STELLT AUF…",
+      "fleet": "FLOTTE",
+      "cells": "{n} FELDER",
+      "dragging": "ZIEHEN…",
+      "selected": "GEWÄHLT",
+      "problems": {
+        "out_of_bounds": "Das Schiff ragt über den Rand.",
+        "overlap": "Dort liegt schon ein Schiff.",
+        "touching": "Schiffe dürfen sich nicht berühren, auch nicht diagonal."
+      },
+      "rotate": "↻ DREHEN",
+      "random": "ZUFALL",
+      "clear": "LEEREN",
+      "readyButton": "KLAR ZUM GEFECHT ▶"
+    },
+    "modes": {
+      "ai": "1 SPIELER · CPU",
+      "hotseat": "2 SPIELER · 1 GERÄT",
+      "online": "ONLINE"
+    },
+    "battle": {
+      "round": "RUNDE {n}",
+      "resign": "AUFGEBEN",
+      "ownFleet": "DEINE FLOTTE",
+      "afloat": " SCHWIMMEN",
+      "damage": "SCHADENSBERICHT",
+      "yourTurn": "DU BIST DRAN!",
+      "theirTurn": "GEGNER ZIELT…",
+      "enemyWaters": "FEINDGEWÄSSER",
+      "shots": "SCHÜSSE",
+      "hits": "TREFFER",
+      "accuracy": "QUOTE",
+      "enemy": "FEIND",
+      "shipsLeft": " SCHIFFE ÜBRIG",
+      "log": "LOGBUCH",
+      "logEmpty": "Noch kein Schuss gefallen.",
+      "logYou": "DU",
+      "logThem": "GEGNER",
+      "logHit": "TREFFER!",
+      "logHitMe": "GETROFFEN",
+      "logMiss": "DANEBEN",
+      "logSunk": "{ship} VERSENKT!",
+      "logAuto": " (ZEIT)",
+      "fireTag": "{cell} FEUER!",
+      "fireAt": "{cell}, feuern",
+      "resignTitle": "AUFGEBEN",
+      "resignMessage": "Sicher, Kapitän? Deine Schiffe sinken und du verlierst die Schlacht.",
+      "resignConfirm": "▶ AUFGEBEN",
+      "logTab": "LOG",
+      "disconnected": "GEGNER GETRENNT · {time}"
+    },
+    "chat": {
+      "tab": "CHAT",
+      "placeholder": "NACHRICHT",
+      "mute": "STUMM",
+      "unmute": "LAUT"
+    },
+    "flow": {
+      "readyTitle": "FLOTTE BEREIT!",
+      "waiting": "{name} STELLT AUF",
+      "menu": "◀ HAUPTMENÜ",
+      "handoffKicker": "GERÄT ÜBERGEBEN",
+      "handoffTitle": "KAPITÄN {name}",
+      "handoffHint": "{other}, NICHT HINSEHEN! SCHIFFE BLEIBEN GEHEIM.",
+      "handoffReady": "▶ BEREIT, ZEIGEN",
+      "handoffBlink": "PRESS START",
+      "placeTitle": "{name}, FLOTTE AUFSTELLEN"
+    },
+    "over": {
+      "victory": "SIEG!",
+      "defeat": "NIEDERLAGE",
+      "winnerIs": "{name} GEWINNT!",
+      "theirFleet": "FLOTTE {name}",
+      "you": "DU",
+      "rematch": "▶ REVANCHE",
+      "menu": "◀ HAUPTMENÜ",
+      "score": "PUNKTE",
+      "newHigh": "NEUER REKORD!"
+    },
+    "menu": {
+      "title": "MODUS",
+      "logout": "ABMELDEN",
+      "level": "SCHWIERIGKEIT",
+      "levels": {
+        "easy": "LEICHT",
+        "normal": "NORMAL",
+        "hard": "SCHWER"
+      },
+      "secondName": "ZWEITER KAPITÄN",
+      "codePlaceholder": "RAUMCODE",
+      "ai": {
+        "title": "1 SPIELER · CPU",
+        "description": "Gegen den Computer-Admiral. Wähle die Stufe.",
+        "start": "▶ SCHLACHT STARTEN"
+      },
+      "hotseat": {
+        "title": "2 SPIELER · 1 GERÄT",
+        "description": "Zwei Kapitäne an einem Gerät, abwechselnd.",
+        "start": "▶ IN SEE STECHEN"
+      },
+      "random": {
+        "title": "ONLINE · ZUFALL",
+        "description": "Triff einen Kapitän auf hoher See.",
+        "start": "▶ GEGNER FINDEN"
+      },
+      "room": {
+        "title": "ONLINE · RAUM",
+        "description": "Raum erstellen, Code an Freunde schicken.",
+        "start": "▶ RAUM ERSTELLEN"
+      },
+      "join": {
+        "title": "MIT CODE BEITRETEN",
+        "description": "Gib den Raumcode ein.",
+        "start": "▶ BEITRETEN"
+      },
+      "links": {
+        "profile": "PROFIL",
+        "scores": "REKORDE",
+        "how": "REGELN",
+        "shop": "MARKT"
+      }
+    },
+    "room": {
+      "chip": "RAUM · {code}",
+      "code": "RAUMCODE",
+      "copy": "KOPIEREN",
+      "share": "TEILEN",
+      "ready": "▶ BEREIT",
+      "unready": "NICHT BEREIT",
+      "start": "▶ STARTEN",
+      "leave": "◀ RAUM VERLASSEN",
+      "settings": "RAUM-OPTIONEN",
+      "unlimited": "OHNE LIMIT",
+      "seconds": "{n} S",
+      "waiting": "WARTE AUF KAPITÄN",
+      "waitingHint": "CODE ODER LINK SENDEN",
+      "host": "GASTGEBER",
+      "guest": "GAST",
+      "isReady": "BEREIT ✓",
+      "notReady": "NICHT BEREIT",
+      "kick": "✕ ENTFERNEN",
+      "joining": "VERBINDE MIT RAUM",
+      "notFound": "RAUM NICHT GEFUNDEN",
+      "copyCode": "CODE KOPIEREN",
+      "copyLink": "LINK KOPIEREN",
+      "copied": "KOPIERT ✓",
+      "whatsapp": "PER WHATSAPP"
+    },
+    "match": {
+      "title": "SUCHE GEGNER",
+      "hint": "KAPITÄNE AUF SEE WERDEN GESUCHT",
+      "elapsed": "VERGANGEN {time}",
+      "cancel": "◀ ABBRECHEN"
+    },
+    "info": {
+      "back": "◀ MENÜ"
+    },
+    "scores": {
+      "title": "BESTENLISTE",
+      "rank": "RANG",
+      "name": "KAPITÄN",
+      "mode": "FAHRT",
+      "score": "PUNKTE",
+      "legend": "LEGENDE",
+      "hint": "TREFFER 1000 · SIEG 10000 · JEDER SCHUSS UNTER 100: 500",
+      "win": "SIEG",
+      "loss": "NIEDERLAGE",
+      "modes": {
+        "ai": "CPU",
+        "hotseat": "1 GERÄT",
+        "online": "ONLINE"
+      }
+    },
+    "profile": {
+      "kicker": "KAPITÄNSKARTE",
+      "guest": "GAST · FORTSCHRITT NUR AUF DIESEM GERÄT",
+      "account": "KONTO · {email}",
+      "played": "SPIELE",
+      "won": "SIEGE",
+      "accuracy": "QUOTE",
+      "best": "BESTWERT",
+      "recent": "LETZTE FAHRTEN",
+      "noGames": "Noch keine Fahrten. Feuer die erste Salve, Kapitän!",
+      "versus": "GEGEN {name}",
+      "upgradeTitle": "KONTO ERSTELLEN",
+      "upgradeText": "Name und Punkte bleiben; Anmeldung auf jedem Gerät.",
+      "upgradeSubmit": "▶ KONTO ERSTELLEN",
+      "accountTitle": "KONTO",
+      "accountText": "Melde dich mit Name oder E-Mail auf jedem Gerät an.",
+      "logout": "ABMELDEN",
+      "scores": "BESTENLISTE ▶"
+    },
+    "how": {
+      "title": "SO GEHT'S",
+      "fleet": "FLOTTE",
+      "cells": "{n} FELDER",
+      "legend": "SYMBOLE",
+      "controls": "STEUERUNG",
+      "play": "▶ SCHLACHT STARTEN",
+      "place": {
+        "title": "AUFSTELLEN",
+        "text": "Stelle 5 Schiffe auf das 10×10-Meer, waagrecht oder senkrecht. Sie dürfen sich nicht berühren."
+      },
+      "fire": {
+        "title": "FEUERN",
+        "text": "Wählt abwechselnd ein Feld im Feindgewässer. Jeder Zug ist begrenzt; sonst fällt ein Zufallsschuss."
+      },
+      "sink": {
+        "title": "VERSENKEN",
+        "text": "Ein Schiff sinkt, wenn alle Felder getroffen sind. Wer zuerst alle versenkt, gewinnt."
+      },
+      "marks": {
+        "ship": "SCHIFF",
+        "hit": "TREFFER",
+        "sunk": "VERSENKT",
+        "miss": "DANEBEN",
+        "aim": "FADENKREUZ"
+      },
+      "keys": {
+        "aim": {
+          "key": "◀ ▲ ▼ ▶",
+          "text": "Zielen (Schlacht)"
+        },
+        "fire": {
+          "key": "ENTER",
+          "text": "Feuern · oder Feld antippen"
+        },
+        "rotate": {
+          "key": "R / RECHTSKLICK",
+          "text": "Schiff drehen (Aufstellung)"
+        },
+        "drag": {
+          "key": "ZIEHEN",
+          "text": "Schiff aus der Liste aufs Meer"
+        }
+      }
+    },
+    "lost": {
+      "title": "VERLORENE GEWÄSSER",
+      "text": "Hier ist Meer, aber kein Schiff. Kurs zurück zum Hafen, Kapitän.",
+      "home": "▶ HAUPTMENÜ"
+    },
+    "lang": {
+      "title": "SPRACHE",
+      "auto": "AUTOMATISCH (BROWSER)"
+    },
+    "nav": {
+      "back": "ZURÜCK",
+      "leaveTitle": "SPIEL VERLASSEN",
+      "leaveMessage": "Zurück zum Menü zählt als Aufgabe. Sicher, Kapitän?",
+      "leaveConfirm": "▶ SPIEL VERLASSEN"
+    },
+    "shop": {
+      "title": "MARKT",
+      "balance": "BEUTEL",
+      "tabs": {
+        "gold": "GOLD",
+        "ship": "SCHIFFE",
+        "ball": "KUGELN",
+        "flame": "FLAMMEN",
+        "map": "KARTEN"
+      },
+      "buy": "KAUFEN",
+      "equip": "AUSRÜSTEN",
+      "equipped": "AUSGERÜSTET ✓",
+      "poor": "ZU WENIG GOLD",
+      "demo": "DEMO-LADEN · KEINE ECHTE ZAHLUNG",
+      "bonus": "+{n} % BONUS",
+      "bought": "+{n} GOLD IM BEUTEL",
+      "needRoom": "EIN RAUM KOSTET {cost} GOLD",
+      "earn": "Sieg: CPU +30/+50/+80, online +100 · Niederlage −20",
+      "packs": {
+        "pouch": "BEUTEL",
+        "chest": "TRUHE",
+        "hoard": "SCHATZ"
+      }
+    },
+    "items": {
+      "ship": {
+        "classic": "KLASSISCHE EICHE",
+        "royal": "KÖNIGSBLAU",
+        "crimson": "ROTER PIRAT",
+        "blackpearl": "SCHWARZE PERLE",
+        "ghost": "GEISTERSCHIFF",
+        "golden": "GOLDENE FLOTTE"
+      },
+      "ball": {
+        "iron": "GUSSEISEN",
+        "chain": "KETTENKUGEL",
+        "fire": "FEUERKUGEL",
+        "ice": "EISKUGEL",
+        "gold": "GOLDKUGEL"
+      },
+      "flame": {
+        "classic": "KLASSISCHES FEUER",
+        "ghost": "GEISTERFEUER",
+        "greek": "GRIECHISCHES FEUER",
+        "cursed": "VERFLUCHTE FLAMME",
+        "phosphor": "PHOSPHOR"
+      },
+      "map": {
+        "ocean": "OFFENER OZEAN",
+        "lagoon": "TROPENLAGUNE",
+        "arctic": "EISMEER",
+        "emerald": "SMARAGDBUCHT",
+        "abyss": "TIEFER ABGRUND",
+        "lava": "LAVAMEER"
+      }
+    }
+  }
+}

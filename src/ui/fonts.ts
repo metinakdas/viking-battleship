@@ -1,25 +1,8 @@
-import {
-  Inter_400Regular,
-  Inter_500Medium,
-  Inter_600SemiBold,
-  Inter_700Bold,
-} from '@expo-google-fonts/inter';
-import { Cinzel_600SemiBold, Cinzel_700Bold } from '@expo-google-fonts/cinzel';
-import {
-  SpaceGrotesk_500Medium,
-  SpaceGrotesk_600SemiBold,
-  SpaceGrotesk_700Bold,
-} from '@expo-google-fonts/space-grotesk';
+import { PressStart2P_400Regular } from '@expo-google-fonts/press-start-2p';
+import { VT323_400Regular } from '@expo-google-fonts/vt323';
 
-/** useFonts'a verilen harita. Anahtarlar theme.fonts'taki aile adlarıyla aynı olmalı. */
+/** useFonts'a verilen harita. Anahtarlar arcade/theme.ts'teki FONT aile adlarıyla aynı olmalı. */
 export const fontMap = {
-  Cinzel_600SemiBold,
-  Cinzel_700Bold,
-  Inter_400Regular,
-  Inter_500Medium,
-  Inter_600SemiBold,
-  Inter_700Bold,
-  SpaceGrotesk_500Medium,
-  SpaceGrotesk_600SemiBold,
-  SpaceGrotesk_700Bold,
+  PressStart2P_400Regular,
+  VT323_400Regular,
 };

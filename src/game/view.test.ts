@@ -37,9 +37,9 @@ describe('getPlayerView: hile önleme', () => {
 
   it('savaş boyunca rakibin batmamış gemileri sızmaz', () => {
     let s = battleState({ settings: { extraShotOnHit: true } });
-    s = fire(s, 0, { row: 0, col: 0 }); // drakkara isabet, batmadı
+    s = fire(s, 0, { row: 0, col: 0 }); // kalyona isabet, batmadı
     s = fire(s, 0, { row: 8, col: 8 });
-    s = fire(s, 0, { row: 8, col: 9 }); // færing battı
+    s = fire(s, 0, { row: 8, col: 9 }); // şalupa battı
     expect(leaksAfloatShips(s, 0)).toBe(false);
     expect(leaksAfloatShips(s, 1)).toBe(false);
 
@@ -48,7 +48,7 @@ describe('getPlayerView: hile önleme', () => {
     expect(view.opponent.incoming.map((x) => x.result)).toEqual(['hit', 'hit', 'sunk']);
     // İsabet kaydı hangi gemi olduğunu söylemez.
     expect(view.opponent.incoming[0]).not.toHaveProperty('sunk');
-    expect(getPlayerView(s, 1).me.sunk).toEqual(['faering']);
+    expect(getPlayerView(s, 1).me.sunk).toEqual(['sloop']);
   });
 
   it('sıra bilgisi', () => {

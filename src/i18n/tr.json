@@ -1,88 +1,25 @@
 {
   "app": {
-    "title": "AMİRAL BATTI",
-    "subtitle": "Kuzey Denizlerinin Savaşı"
+    "title": "AMİRAL BATTI"
   },
   "common": {
-    "guest": "Misafir",
-    "loading": "Yükleniyor…",
-    "cancel": "İptal",
-    "ok": "Tamam",
-    "back": "Geri",
-    "logout": "Çıkış",
-    "or": "ya da",
-    "yes": "Evet",
-    "no": "Hayır",
     "close": "Kapat",
-    "settings": "Ayarlar",
-    "you": "Sen"
+    "settings": "Ayarlar"
   },
   "ships": {
-    "drakkar": "Drakkar",
-    "snekkja": "Snekkja",
-    "karvi": "Karvi",
-    "knarr": "Knarr",
-    "faering": "Færing"
+    "galleon": "Kalyon",
+    "frigate": "Fırkateyn",
+    "corvette": "Korvet",
+    "brig": "Brik",
+    "sloop": "Şalupa"
   },
   "board": {
-    "own": "Kendi filon",
-    "enemy": "Düşman suları",
     "cell": {
       "miss": "{cell}, ıska",
-      "hit": "{cell}, isabet",
-      "sunk": "{cell}, batırıldı",
-      "ship": "{cell}, {ship}"
+      "hit": "{cell}, isabet"
     }
   },
-  "uiShowcase": {
-    "title": "Bileşen Vitrini",
-    "description": "Viking teması + buzlu cam. Geliştirici sayfası (/dev/ui).",
-    "buttons": "Butonlar",
-    "primary": "Savaşa Hazırım",
-    "secondary": "Rastgele Diz",
-    "ghost": "Temizle",
-    "disabled": "Pasif",
-    "pills": "Etiketler",
-    "inputs": "Alanlar",
-    "username": "Kullanıcı adı",
-    "password": "Şifre",
-    "usernameError": "En az 3 karakter",
-    "typography": "Tipografi",
-    "colors": "Renkler",
-    "fleet": "Filo",
-    "ownBoard": "Kendi Filon",
-    "enemyBoard": "Düşman Suları",
-    "placement": "Yerleştirme Önizleme",
-    "hoverHint": "Fareyle üzerine gel: satır/sütun vurgusu ve nişangah. Tıkla: ateş."
-  },
   "auth": {
-    "login": {
-      "title": "Tekrar hoş geldin, Kaptan",
-      "email": "E-posta",
-      "password": "Şifre",
-      "submit": "Giriş Yap",
-      "guest": "Misafir olarak oyna",
-      "noAccount": "Hesabın yok mu?",
-      "register": "Kayıt ol"
-    },
-    "guest": {
-      "title": "Misafir Kaptan",
-      "hint": "Hesap gerekmez. Adın ve kalkanın bu cihazda saklanır.",
-      "nickname": "Takma ad",
-      "rerollName": "Başka ad öner",
-      "rerollAvatar": "Kalkanı değiştir",
-      "submit": "Denize Açıl"
-    },
-    "register": {
-      "title": "Mürettebata katıl",
-      "displayName": "Kaptan adı",
-      "email": "E-posta",
-      "password": "Şifre",
-      "passwordHint": "En az 6 karakter",
-      "submit": "Kayıt Ol",
-      "haveAccount": "Zaten hesabın var mı?",
-      "login": "Giriş yap"
-    },
     "errors": {
       "invalid_email": "Geçerli bir e-posta gir.",
       "weak_password": "Şifre en az 6 karakter olmalı.",
@@ -92,101 +29,15 @@
       "not_guest": "Bu hesap zaten kayıtlı.",
       "not_signed_in": "Önce giriş yapmalısın.",
       "unknown": "Bir şeyler ters gitti. Tekrar dene.",
-      "required": "Bu alan gerekli."
+      "required": "Bu alan gerekli.",
+      "name_taken": "Bu kaptan adı alınmış."
     }
   },
   "lobby": {
-    "subtitle": "Rüzgâr arkanda, kürekler hazır. Bugün hangi sulara yelken açıyorsun?",
-    "ai": {
-      "title": "Jarla Meydan Oku",
-      "description": "Bilgisayara karşı. Her jarlın kendi savaş tarzı var.",
-      "start": "Savaşa Başla",
-      "levels": {
-        "easy": "Kolay",
-        "normal": "Normal",
-        "hard": "Zor"
-      },
-      "levelHints": {
-        "easy": "Rastgele ateş eder. Isınmak için ideal.",
-        "normal": "İsabet alınca etrafını avlar.",
-        "hard": "Olasılık haritasıyla nişan alır. Acımaz."
-      },
-      "pick": "Rakibini seç",
-      "waiting": "{name} seni bekliyor."
-    },
-    "hotseat": {
-      "title": "Dost Kavgası",
-      "description": "Aynı cihazda iki kaptan. Her sırada perde iner; gemiler gizli kalır.",
-      "start": "Başla",
-      "step1": "İkiniz de filonuzu gizlice dizin",
-      "step2": "Her sırada perde iner: cihazı devret",
-      "step3": "Sırayla ateş edin; son gemi batana dek"
-    },
-    "random": {
-      "title": "Rastgele Rakip",
-      "description": "Denizlerde dolaşan bir kaptanla eşleş.",
-      "start": "Rakip Bul"
-    },
-    "room": {
-      "title": "Oda Kur",
-      "description": "Arkadaşını davet et: 6 haneli kod ya da link.",
-      "start": "Oda Kur"
-    },
     "join": {
-      "title": "Kodla Katıl",
-      "description": "Arkadaşının kodunu ya da linkini gir.",
       "placeholder": "Örn. K7QM2X",
-      "submit": "Katıl",
       "invalid": "Kod 6 harf/rakam olmalı."
-    },
-    "upgrade": {
-      "title": "Misafir olarak oynuyorsun",
-      "description": "İlerlemen yalnızca bu cihazda. Hesaba dönüştür; adın ve kalkanın korunur.",
-      "open": "Hesap oluştur",
-      "submit": "Hesaba Dönüştür",
-      "short": "Misafir kaptan · ilerlemen yalnızca bu cihazda"
-    },
-    "stats": {
-      "played": "Oyun",
-      "won": "Zafer",
-      "accuracy": "İsabet oranı"
-    },
-    "overline": "Kuzey Denizi Limanı",
-    "greetingTop": "Hoş geldin,",
-    "localTitle": "Limanda",
-    "localSub": "Tek cihaz",
-    "onlineTitle": "Açık Deniz",
-    "onlineSub": "Çevrimiçi"
-  },
-  "phase": {
-    "placement": "Filonu Yerleştir",
-    "battle": "Savaş"
-  },
-  "placement": {
-    "fleet": "Filon",
-    "progress": "{placed}/{total} gemi",
-    "cells": "{size} hücre",
-    "status": {
-      "placed": "Yerleşti",
-      "selected": "Seçili"
-    },
-    "rotate": "Döndür",
-    "random": "Rastgele Diz",
-    "clear": "Temizle",
-    "ready": "Savaşa Hazırım",
-    "hint": "Gemiyi seç, tahtaya tıkla ya da sürükle. R: döndür · Del: kaldır · Esc: bırak. Dokunmatikte uzun bas: döndür.",
-    "hintDone": "Filon hazır. İstersen gemileri sürükleyip yerlerini değiştir.",
-    "problems": {
-      "out_of_bounds": "Gemi tahtanın dışına taşıyor.",
-      "overlap": "Orada başka bir gemi var.",
-      "touching": "Gemiler birbirine değemez (çapraz dahil)."
-    },
-    "shipA11y": "{ship}, {size} hücre{status}"
-  },
-  "modes": {
-    "ai": "Bilgisayara Karşı · {level}",
-    "hotseat": "Aynı Cihazda 2 Kişi",
-    "online": "Çevrimiçi"
+    }
   },
   "aiNames": {
     "easy": "Çırak Leif",
@@ -194,94 +45,26 @@
     "hard": "Demir Ragnhild"
   },
   "battle": {
-    "yourTurn": "Sıra sende, Kaptan!",
-    "theirTurn": "{name} nişan alıyor…",
-    "round": "Tur {n}",
-    "ownFleet": "Kendi filon",
-    "enemyWaters": "Düşman suları",
-    "enemyFleet": "Düşman filosu",
-    "damage": "Hasar raporu",
-    "stats": "İstatistik",
-    "shots": "Atış",
-    "hits": "İsabet",
-    "accuracy": "Oran",
-    "log": "Seyir defteri",
-    "logEmpty": "Henüz top ateşlenmedi.",
-    "afloat": "Yüzüyor",
-    "sunk": "Battı",
-    "hitsOn": "{hits}/{size} isabet",
-    "logYou": "{cell} → {result}",
-    "logThem": "{name}: {cell} → {result}",
-    "logAuto": " (süre doldu)",
-    "result": {
-      "miss": "ıska",
-      "hit": "isabet!",
-      "sunk": "{ship} battı!"
-    },
-    "resign": "Teslim ol",
-    "resignConfirm": "Emin misin? Gemiler denize gömülür.",
-    "enlarge": "Büyüt",
-    "shrink": "Küçült",
-    "keyboardHint": "Ok tuşları: hedef · Enter: ateş",
-    "waitingPlacement": "{name} filosunu yerleştiriyor…",
-    "disconnected": "{name} bağlantısını kaybetti. {time} içinde dönmezse zafer senin.",
     "devDisconnect": "Kopmayı dene (geliştirici)",
-    "devReconnect": "Geri bağla (geliştirici)",
-    "versus": "Rakip {n}"
+    "devReconnect": "Geri bağla (geliştirici)"
   },
   "gameOver": {
-    "victory": "Zafer!",
-    "defeat": "Yenilgi",
-    "winnerIs": "{name} kazandı!",
     "reasons": {
       "allSunk": "Tüm filo denizin dibinde.",
       "resign": "{name} teslim oldu.",
       "disconnect": "{name} geri dönmedi; hükmen galibiyet."
-    },
-    "you": "Sen",
-    "turns": "{n} tur",
-    "rematch": "Rövanş",
-    "lobby": "Lobiye dön",
-    "theirFleet": "Rakibin filosu",
-    "yourFleet": "Senin filon",
-    "valhalla": "Valhalla seni bekler"
-  },
-  "hotseat": {
-    "title": "Aynı Cihazda 2 Kişi",
-    "secondName": "İkinci kaptanın adı",
-    "first": "Birinci kaptan",
-    "start": "Denize Açılın",
-    "hint": "Sırayla oynayacaksınız. Her sıra değişiminde ekran kapanır; cihazı rakibine ver.",
-    "handoffTitle": "Cihazı {name} kaptana ver",
-    "handoffHint": "{other}, bakma! Gemilerin gizli kalmalı.",
-    "handoffReady": "Hazırım, göster",
-    "placeHeading": "{name}, filonu yerleştir"
+    }
   },
   "room": {
-    "title": "Oda",
     "code": "Oda kodu",
-    "copy": "Kodu kopyala",
     "copied": "Kopyalandı!",
-    "share": "Linki paylaş",
     "linkCopied": "Link panoya kopyalandı.",
     "shareText": "Amiral Battı odama katıl: {url}",
-    "waiting": "Kaptan bekleniyor…",
-    "host": "Kaptan",
-    "ready": "Hazır",
-    "notReady": "Hazır değil",
-    "setReady": "Hazırım",
-    "unsetReady": "Hazır değilim",
-    "start": "Savaşı Başlat",
-    "leave": "Odadan ayrıl",
-    "kick": "At",
     "startHint": "İki taraf da hazır olunca başlatabilirsin.",
     "guestStartHint": "Kurucu savaşı başlatacak.",
-    "settings": "Oda ayarları",
     "extraShot": "İsabette tekrar ateş",
     "extraShotHint": "Vuran oyuncu bir kez daha ateş eder.",
     "turnTime": "Tur süresi",
-    "unlimited": "Süresiz",
-    "seconds": "{n} sn",
     "timeout": "Süre dolarsa",
     "randomShot": "Rastgele atış",
     "skipTurn": "Sıra kaybı",
@@ -293,22 +76,12 @@
       "not_in_room": "Bu odada değilsin.",
       "not_ready": "İki taraf da hazır olmalı.",
       "invalid_settings": "Geçersiz ayar."
-    },
-    "joining": "Odaya bağlanılıyor…"
-  },
-  "matchmaking": {
-    "title": "Rakip aranıyor",
-    "hint": "Denizlerde dolaşan kaptanlar taranıyor…",
-    "elapsed": "Geçen süre {time}",
-    "cancel": "İptal",
-    "found": "Rakip bulundu: {name}"
+    }
   },
   "chat": {
     "title": "Sohbet",
     "placeholder": "Mesaj yaz…",
     "send": "Gönder",
-    "mute": "Sessize al",
-    "unmute": "Sesi aç",
     "muted": "{name} sessize alındı",
     "quick": {
       "niceShot": "İyi atış!",
@@ -329,11 +102,372 @@
     },
     "empty": "Henüz mesaj yok. Selam ver!"
   },
-  "settings": {
-    "title": "Ayarlar",
-    "sound": "Ses efektleri",
-    "soundHint": "Top, su sıçraması ve batma sesleri (yakında).",
-    "reduceMotion": "Hareketi azalt",
-    "reduceMotionHint": "Animasyonları kapatır."
+  "arcade": {
+    "cover": {
+      "description": "Top bataryalı kalyonlarla retro piksel deniz savaşı.",
+      "chip1": "2 OYUNCU / CPU",
+      "chip2": "10 × 10 DENİZ",
+      "chip3": "5 GEMİLİK FİLO",
+      "start": "▶ PRESS START"
+    },
+    "login": {
+      "tagline": "~ DENİZLERİN HAKİMİ ~",
+      "username": "KULLANICI ADI",
+      "password": "ŞİFRE",
+      "email": "E-POSTA",
+      "captainName": "KAPTAN ADI",
+      "submit": "▶ GİRİŞ YAP",
+      "sail": "▶ DENİZE AÇIL",
+      "registerSubmit": "▶ KAYIT OL",
+      "wait": "BEKLEYİN…",
+      "guest": "MİSAFİR OYNA",
+      "register": "KAYIT OL ▸",
+      "back": "◂ GERİ",
+      "footer": "◎ DENİZE TIKLA, GEMİLERİ VUR",
+      "or": "YA DA",
+      "guestCta": "⚓ MİSAFİR OLARAK OYNA"
+    },
+    "header": {
+      "tagline": "DENİZLERİN HAKİMİ"
+    },
+    "steps": {
+      "placement": "1 · FİLONU DİZ",
+      "placementDone": "FİLO",
+      "battle": "2 · SAVAŞ",
+      "battleDone": "SAVAŞ"
+    },
+    "settings": {
+      "title": "AYARLAR",
+      "motion": "HAREKETİ AZALT",
+      "on": "AÇIK",
+      "off": "KAPALI",
+      "close": "KAPAT",
+      "language": "DİL",
+      "theme": "TEMA",
+      "night": "GECE",
+      "day": "GÜNDÜZ",
+      "music": "MÜZİK",
+      "sfx": "EFEKTLER",
+      "reset": "↺ VARSAYILANA DÖNDÜR",
+      "resetConfirm": "EMİN MİSİN? TEKRAR DOKUN",
+      "mute": "SESİ KAPAT",
+      "unmute": "SESİ AÇ"
+    },
+    "confirm": {
+      "cancel": "VAZGEÇ"
+    },
+    "placement": {
+      "ownWaters": "KENDİ SULARIN",
+      "opponent": "RAKİP: {name} · ",
+      "ready": "HAZIR ✓",
+      "waiting": "DİZİYOR…",
+      "fleet": "FİLON",
+      "cells": "{n} KARE",
+      "dragging": "SÜRÜKLE…",
+      "selected": "SEÇİLİ",
+      "problems": {
+        "out_of_bounds": "Gemi tahtanın dışına taşıyor.",
+        "overlap": "Orada başka bir gemi var.",
+        "touching": "Gemiler birbirine değemez, çaprazdan bile."
+      },
+      "rotate": "↻ DÖNDÜR",
+      "random": "RASTGELE",
+      "clear": "TEMİZLE",
+      "readyButton": "SAVAŞA HAZIRIM ▶"
+    },
+    "modes": {
+      "ai": "TEK OYUNCU · CPU",
+      "hotseat": "2 OYUNCU · AYNI CİHAZ",
+      "online": "ÇEVRİMİÇİ"
+    },
+    "battle": {
+      "round": "TUR {n}",
+      "resign": "TESLİM OL",
+      "ownFleet": "KENDİ FİLON",
+      "afloat": " AYAKTA",
+      "damage": "HASAR RAPORU",
+      "yourTurn": "SIRA SENDE!",
+      "theirTurn": "RAKİP NİŞAN ALIYOR…",
+      "enemyWaters": "DÜŞMAN SULARI",
+      "shots": "ATIŞ",
+      "hits": "İSABET",
+      "accuracy": "ORAN",
+      "enemy": "DÜŞMAN",
+      "shipsLeft": " GEMİ KALDI",
+      "log": "SEYİR DEFTERİ",
+      "logEmpty": "Henüz top ateşlenmedi.",
+      "logYou": "SEN",
+      "logThem": "RAKİP",
+      "logHit": "İSABET!",
+      "logHitMe": "VURULDUN",
+      "logMiss": "ISKA",
+      "logSunk": "{ship} BATTI!",
+      "logAuto": " (SÜRE)",
+      "fireTag": "{cell} ATEŞ!",
+      "fireAt": "{cell}, ateş et",
+      "resignTitle": "TESLİM OL",
+      "resignMessage": "Emin misin, Kaptan? Gemiler denize gömülür ve savaşı kaybedersin.",
+      "resignConfirm": "▶ TESLİM OL",
+      "logTab": "DEFTER",
+      "disconnected": "RAKİBİN BAĞLANTISI KOPTU · {time}"
+    },
+    "chat": {
+      "tab": "SOHBET",
+      "placeholder": "MESAJ YAZ",
+      "mute": "SESSİZ",
+      "unmute": "SESİ AÇ"
+    },
+    "flow": {
+      "readyTitle": "FİLON HAZIR!",
+      "waiting": "{name} FİLOSUNU DİZİYOR",
+      "menu": "◀ ANA MENÜ",
+      "handoffKicker": "CİHAZI DEVRET",
+      "handoffTitle": "{name} KAPTAN",
+      "handoffHint": "{other}, BAKMA! GEMİLERİN GİZLİ KALMALI.",
+      "handoffReady": "▶ HAZIRIM, GÖSTER",
+      "handoffBlink": "PRESS START",
+      "placeTitle": "{name}, FİLONU DİZ"
+    },
+    "over": {
+      "victory": "ZAFER!",
+      "defeat": "YENİLGİ",
+      "winnerIs": "{name} KAZANDI!",
+      "theirFleet": "{name} FİLOSU",
+      "you": "SEN",
+      "rematch": "▶ RÖVANŞ",
+      "menu": "◀ ANA MENÜ",
+      "score": "SKOR",
+      "newHigh": "YENİ REKOR!"
+    },
+    "menu": {
+      "title": "MOD SEÇ",
+      "logout": "ÇIKIŞ",
+      "level": "ZORLUK",
+      "levels": {
+        "easy": "KOLAY",
+        "normal": "NORMAL",
+        "hard": "ZOR"
+      },
+      "secondName": "İKİNCİ KAPTAN",
+      "codePlaceholder": "ODA KODU",
+      "ai": {
+        "title": "TEK OYUNCU · CPU",
+        "description": "Bilgisayar amirale karşı. Zorluğu seç.",
+        "start": "▶ SAVAŞA BAŞLA"
+      },
+      "hotseat": {
+        "title": "2 OYUNCU · AYNI CİHAZ",
+        "description": "Aynı cihazda iki kaptan, sırayla.",
+        "start": "▶ DENİZE AÇILIN"
+      },
+      "random": {
+        "title": "ÇEVRİMİÇİ · RASTGELE",
+        "description": "Açık denizde bir rakiple eşleş.",
+        "start": "▶ RAKİP BUL"
+      },
+      "room": {
+        "title": "ÇEVRİMİÇİ · ODA KUR",
+        "description": "Oda kur, kodu arkadaşına gönder.",
+        "start": "▶ ODA KUR"
+      },
+      "join": {
+        "title": "KODLA KATIL",
+        "description": "Arkadaşının oda kodunu gir.",
+        "start": "▶ ODAYA KATIL"
+      },
+      "links": {
+        "profile": "PROFİL",
+        "scores": "REKORLAR",
+        "how": "KURALLAR",
+        "shop": "MARKET"
+      }
+    },
+    "room": {
+      "chip": "ODA · {code}",
+      "code": "ODA KODU",
+      "copy": "KOPYALA",
+      "share": "PAYLAŞ",
+      "ready": "▶ HAZIRIM",
+      "unready": "HAZIR DEĞİLİM",
+      "start": "▶ SAVAŞI BAŞLAT",
+      "leave": "◀ ODADAN AYRIL",
+      "settings": "ODA AYARLARI",
+      "unlimited": "SÜRESİZ",
+      "seconds": "{n} SN",
+      "waiting": "KAPTAN BEKLENİYOR",
+      "waitingHint": "KODU YA DA LİNKİ GÖNDER",
+      "host": "KURUCU",
+      "guest": "MİSAFİR",
+      "isReady": "HAZIR ✓",
+      "notReady": "HAZIR DEĞİL",
+      "kick": "✕ ODADAN AT",
+      "joining": "ODAYA BAĞLANILIYOR",
+      "notFound": "ODA BULUNAMADI",
+      "copyCode": "KODU KOPYALA",
+      "copyLink": "LİNKİ KOPYALA",
+      "copied": "KOPYALANDI ✓",
+      "whatsapp": "WHATSAPP'TA PAYLAŞ"
+    },
+    "match": {
+      "title": "RAKİP ARANIYOR",
+      "hint": "AÇIK DENİZDEKİ KAPTANLAR TARANIYOR",
+      "elapsed": "GEÇEN SÜRE {time}",
+      "cancel": "◀ İPTAL"
+    },
+    "info": {
+      "back": "◀ MENÜ"
+    },
+    "scores": {
+      "title": "REKOR TABLOSU",
+      "rank": "SIRA",
+      "name": "KAPTAN",
+      "mode": "SEFER",
+      "score": "SKOR",
+      "legend": "EFSANE",
+      "hint": "İSABET 1000 · ZAFER 10000 · 100 ATIŞIN ALTINDAKİ HER ATIŞ 500",
+      "win": "ZAFER",
+      "loss": "YENİLGİ",
+      "modes": {
+        "ai": "CPU",
+        "hotseat": "AYNI CİHAZ",
+        "online": "ÇEVRİMİÇİ"
+      }
+    },
+    "profile": {
+      "kicker": "KAPTAN KARTI",
+      "guest": "MİSAFİR KAPTAN · İLERLEMEN YALNIZCA BU CİHAZDA",
+      "account": "HESAP · {email}",
+      "played": "OYUN",
+      "won": "ZAFER",
+      "accuracy": "İSABET",
+      "best": "EN İYİ SKOR",
+      "recent": "SON SEFERLER",
+      "noGames": "Henüz sefer yok. İlk salvoyu at, Kaptan!",
+      "versus": "RAKİP {name}",
+      "upgradeTitle": "HESABA DÖNÜŞTÜR",
+      "upgradeText": "Adın ve skorların korunur; başka cihazdan da giriş yapabilirsin.",
+      "upgradeSubmit": "▶ HESAP OLUŞTUR",
+      "accountTitle": "HESAP",
+      "accountText": "Kullanıcı adın ya da e-postanla her cihazdan giriş yapabilirsin.",
+      "logout": "ÇIKIŞ YAP",
+      "scores": "REKOR TABLOSU ▶"
+    },
+    "how": {
+      "title": "NASIL OYNANIR",
+      "fleet": "FİLO",
+      "cells": "{n} KARE",
+      "legend": "İŞARETLER",
+      "controls": "KONTROLLER",
+      "play": "▶ SAVAŞA BAŞLA",
+      "place": {
+        "title": "FİLONU DİZ",
+        "text": "5 gemiyi 10×10 denize yerleştir. Gemiler yatay ya da dikey durur, birbirine değemez."
+      },
+      "fire": {
+        "title": "ATEŞ ET",
+        "text": "Sırayla düşman sularında bir kare seç. Her atışın süresi var; süre dolarsa rastgele ateş edilir."
+      },
+      "sink": {
+        "title": "FİLOYU BATIR",
+        "text": "Bir geminin tüm kareleri vurulunca batar. Rakibin filosunu ilk batıran kazanır."
+      },
+      "marks": {
+        "ship": "GEMİ",
+        "hit": "İSABET",
+        "sunk": "BATAN GEMİ",
+        "miss": "ISKA",
+        "aim": "NİŞANGÂH"
+      },
+      "keys": {
+        "aim": {
+          "key": "◀ ▲ ▼ ▶",
+          "text": "Nişan al (savaşta)"
+        },
+        "fire": {
+          "key": "ENTER",
+          "text": "Ateş et · ya da kareye tıkla"
+        },
+        "rotate": {
+          "key": "R / SAĞ TIK",
+          "text": "Gemiyi döndür (yerleştirmede)"
+        },
+        "drag": {
+          "key": "SÜRÜKLE",
+          "text": "Gemiyi listeden denize taşı"
+        }
+      }
+    },
+    "lost": {
+      "title": "KAYIP SULAR",
+      "text": "Bu koordinatta deniz var ama gemi yok. Rotayı limana çevir, Kaptan.",
+      "home": "▶ ANA MENÜ"
+    },
+    "lang": {
+      "title": "DİL",
+      "auto": "OTOMATİK (TARAYICI)"
+    },
+    "nav": {
+      "back": "GERİ",
+      "leaveTitle": "OYUNDAN ÇIK",
+      "leaveMessage": "Menüye dönersen bu savaş teslim sayılır. Emin misin, Kaptan?",
+      "leaveConfirm": "▶ OYUNDAN ÇIK"
+    },
+    "shop": {
+      "title": "MARKET",
+      "balance": "KESEN",
+      "tabs": {
+        "gold": "ALTIN",
+        "ship": "GEMİLER",
+        "ball": "GÜLLELER",
+        "flame": "ALEVLER",
+        "map": "HARİTALAR"
+      },
+      "buy": "SATIN AL",
+      "equip": "KUŞAN",
+      "equipped": "KUŞANILDI ✓",
+      "poor": "ALTIN YETMİYOR",
+      "demo": "DEMO MAĞAZA · GERÇEK ÖDEME ALINMAZ",
+      "bonus": "+%{n} BONUS",
+      "bought": "+{n} ALTIN KESENE EKLENDİ",
+      "needRoom": "ODA KURMAK İÇİN {cost} ALTIN GEREKİYOR",
+      "earn": "Zafer: CPU +30/+50/+80, çevrimiçi +100 · Yenilgi −20",
+      "packs": {
+        "pouch": "KESE",
+        "chest": "SANDIK",
+        "hoard": "HAZİNE"
+      }
+    },
+    "items": {
+      "ship": {
+        "classic": "KLASİK MEŞE",
+        "royal": "KRALİYET MAVİSİ",
+        "crimson": "KIZIL KORSAN",
+        "blackpearl": "KARA İNCİ",
+        "ghost": "HAYALET GEMİ",
+        "golden": "ALTIN DONANMA"
+      },
+      "ball": {
+        "iron": "DÖKME DEMİR",
+        "chain": "ZİNCİRLİ GÜLLE",
+        "fire": "ATEŞ GÜLLESİ",
+        "ice": "BUZ GÜLLESİ",
+        "gold": "ALTIN GÜLLE"
+      },
+      "flame": {
+        "classic": "KLASİK ATEŞ",
+        "ghost": "HAYALET ATEŞİ",
+        "greek": "RUM ATEŞİ",
+        "cursed": "LANETLİ ATEŞ",
+        "phosphor": "FOSFOR"
+      },
+      "map": {
+        "ocean": "AÇIK OKYANUS",
+        "lagoon": "TROPİK LAGÜN",
+        "arctic": "KUTUP DENİZİ",
+        "emerald": "ZÜMRÜT KOY",
+        "abyss": "DERİN KARANLIK",
+        "lava": "LAV DENİZİ"
+      }
+    }
   }
 }

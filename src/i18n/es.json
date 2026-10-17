@@ -1,0 +1,473 @@
+{
+  "app": {
+    "title": "AMİRAL BATTI"
+  },
+  "common": {
+    "close": "Cerrar",
+    "settings": "Ajustes"
+  },
+  "ships": {
+    "galleon": "Galeón",
+    "frigate": "Fragata",
+    "corvette": "Corbeta",
+    "brig": "Bergantín",
+    "sloop": "Balandra"
+  },
+  "board": {
+    "cell": {
+      "miss": "{cell}, agua",
+      "hit": "{cell}, tocado"
+    }
+  },
+  "auth": {
+    "errors": {
+      "invalid_email": "Escribe un correo válido.",
+      "weak_password": "La contraseña necesita al menos 6 caracteres.",
+      "invalid_nickname": "Nombre: 3–16 caracteres; letras, números, espacio, _ y -.",
+      "email_taken": "Ya existe una cuenta con este correo.",
+      "invalid_credentials": "Correo o contraseña incorrectos.",
+      "not_guest": "Esta cuenta ya está registrada.",
+      "not_signed_in": "Primero inicia sesión.",
+      "unknown": "Algo salió mal. Inténtalo de nuevo.",
+      "required": "Este campo es obligatorio.",
+      "name_taken": "Ese nombre de capitán ya existe."
+    }
+  },
+  "lobby": {
+    "join": {
+      "placeholder": "p. ej. K7QM2X",
+      "invalid": "El código tiene 6 letras/números."
+    }
+  },
+  "aiNames": {
+    "easy": "Grumete Leif",
+    "normal": "Jarl Sigurd",
+    "hard": "Ragnhild de Hierro"
+  },
+  "battle": {
+    "devDisconnect": "Simular caída (dev)",
+    "devReconnect": "Reconectar (dev)"
+  },
+  "gameOver": {
+    "reasons": {
+      "allSunk": "Toda la flota descansa en el fondo.",
+      "resign": "{name} se rindió.",
+      "disconnect": "{name} no volvió; victoria por abandono."
+    }
+  },
+  "room": {
+    "code": "Código de sala",
+    "copied": "¡Copiado!",
+    "linkCopied": "Enlace copiado al portapapeles.",
+    "shareText": "Únete a mi sala de Amiral Battı: {url}",
+    "startHint": "Empieza cuando ambos estén listos.",
+    "guestStartHint": "El anfitrión iniciará la batalla.",
+    "extraShot": "Repetir disparo al acertar",
+    "extraShotHint": "Quien acierta dispara otra vez.",
+    "turnTime": "Tiempo por turno",
+    "timeout": "Si se acaba el tiempo",
+    "randomShot": "Disparo al azar",
+    "skipTurn": "Pierde el turno",
+    "onlyHost": "Solo el anfitrión cambia los ajustes.",
+    "errors": {
+      "not_found": "No hay sala abierta con este código.",
+      "full": "La sala está llena.",
+      "not_host": "Solo el anfitrión puede hacerlo.",
+      "not_in_room": "No estás en esta sala.",
+      "not_ready": "Ambos deben estar listos.",
+      "invalid_settings": "Ajuste no válido."
+    }
+  },
+  "chat": {
+    "title": "Chat",
+    "placeholder": "Escribe un mensaje…",
+    "send": "Enviar",
+    "muted": "{name} silenciado",
+    "quick": {
+      "niceShot": "¡Buen disparo!",
+      "notThisTime": "¡Esta vez no!",
+      "congrats": "Enhorabuena, capitán"
+    },
+    "errors": {
+      "empty": "No se puede enviar un mensaje vacío.",
+      "too_long": "Máximo 200 caracteres.",
+      "rate_limited": "Despacio, capitán. Espera unos segundos."
+    },
+    "system": {
+      "joined": "{name} entró en la sala.",
+      "left": "{name} salió de la sala.",
+      "kicked": "{name} fue expulsado.",
+      "shipSunk": "¡El {ship} del capitán {name} se hundió!",
+      "gameStarted": "Empieza la batalla. ¡Buen viento!"
+    },
+    "empty": "Aún no hay mensajes. ¡Saluda!"
+  },
+  "arcade": {
+    "cover": {
+      "description": "Batalla naval retro en píxeles con galeones artillados.",
+      "chip1": "2 JUGADORES / CPU",
+      "chip2": "MAR 10 × 10",
+      "chip3": "FLOTA DE 5",
+      "start": "▶ PRESS START"
+    },
+    "login": {
+      "tagline": "~ SEÑOR DE LOS MARES ~",
+      "username": "USUARIO",
+      "password": "CONTRASEÑA",
+      "email": "CORREO",
+      "captainName": "NOMBRE DE CAPITÁN",
+      "submit": "▶ ENTRAR",
+      "sail": "▶ ZARPAR",
+      "registerSubmit": "▶ REGISTRARSE",
+      "wait": "ESPERA…",
+      "guest": "JUGAR COMO INVITADO",
+      "register": "REGISTRARSE ▸",
+      "back": "◂ VOLVER",
+      "footer": "◎ TOCA EL MAR, HUNDE LOS BARCOS",
+      "or": "O",
+      "guestCta": "⚓ JUGAR COMO INVITADO"
+    },
+    "header": {
+      "tagline": "SEÑOR DE LOS MARES"
+    },
+    "steps": {
+      "placement": "1 · FLOTA",
+      "placementDone": "FLOTA",
+      "battle": "2 · BATALLA",
+      "battleDone": "BATALLA"
+    },
+    "settings": {
+      "title": "AJUSTES",
+      "motion": "MENOS MOVIMIENTO",
+      "on": "SÍ",
+      "off": "NO",
+      "close": "CERRAR",
+      "language": "IDIOMA",
+      "theme": "TEMA",
+      "night": "NOCHE",
+      "day": "DÍA",
+      "music": "MÚSICA",
+      "sfx": "EFECTOS",
+      "reset": "↺ RESTABLECER",
+      "resetConfirm": "¿SEGURO? TOCA OTRA VEZ",
+      "mute": "SILENCIAR",
+      "unmute": "ACTIVAR SONIDO"
+    },
+    "confirm": {
+      "cancel": "CANCELAR"
+    },
+    "placement": {
+      "ownWaters": "TUS AGUAS",
+      "opponent": "RIVAL: {name} · ",
+      "ready": "LISTO ✓",
+      "waiting": "DESPLEGANDO…",
+      "fleet": "FLOTA",
+      "cells": "{n} CASILLAS",
+      "dragging": "ARRASTRA…",
+      "selected": "ELEGIDO",
+      "problems": {
+        "out_of_bounds": "El barco se sale del tablero.",
+        "overlap": "Ya hay otro barco ahí.",
+        "touching": "Los barcos no pueden tocarse, ni en diagonal."
+      },
+      "rotate": "↻ GIRAR",
+      "random": "AZAR",
+      "clear": "BORRAR",
+      "readyButton": "LISTO PARA LA BATALLA ▶"
+    },
+    "modes": {
+      "ai": "1 JUGADOR · CPU",
+      "hotseat": "2 JUGADORES · 1 EQUIPO",
+      "online": "EN LÍNEA"
+    },
+    "battle": {
+      "round": "TURNO {n}",
+      "resign": "RENDIRSE",
+      "ownFleet": "TU FLOTA",
+      "afloat": " A FLOTE",
+      "damage": "DAÑOS",
+      "yourTurn": "¡TE TOCA!",
+      "theirTurn": "EL RIVAL APUNTA…",
+      "enemyWaters": "AGUAS ENEMIGAS",
+      "shots": "DISPAROS",
+      "hits": "ACIERTOS",
+      "accuracy": "TASA",
+      "enemy": "ENEMIGO",
+      "shipsLeft": " BARCOS QUEDAN",
+      "log": "CUADERNO DE BITÁCORA",
+      "logEmpty": "Aún no se ha disparado.",
+      "logYou": "TÚ",
+      "logThem": "RIVAL",
+      "logHit": "¡TOCADO!",
+      "logHitMe": "TE DIERON",
+      "logMiss": "AGUA",
+      "logSunk": "¡{ship} HUNDIDO!",
+      "logAuto": " (TIEMPO)",
+      "fireTag": "¡{cell} FUEGO!",
+      "fireAt": "{cell}, disparar",
+      "resignTitle": "RENDIRSE",
+      "resignMessage": "¿Seguro, capitán? Tus barcos se hundirán y perderás la batalla.",
+      "resignConfirm": "▶ RENDIRSE",
+      "logTab": "BITÁCORA",
+      "disconnected": "RIVAL DESCONECTADO · {time}"
+    },
+    "chat": {
+      "tab": "CHAT",
+      "placeholder": "MENSAJE",
+      "mute": "SILENCIAR",
+      "unmute": "ACTIVAR"
+    },
+    "flow": {
+      "readyTitle": "¡FLOTA LISTA!",
+      "waiting": "{name} ESTÁ DESPLEGANDO",
+      "menu": "◀ MENÚ",
+      "handoffKicker": "PASA EL EQUIPO",
+      "handoffTitle": "CAPITÁN {name}",
+      "handoffHint": "{other}, ¡NO MIRES! TUS BARCOS SIGUEN OCULTOS.",
+      "handoffReady": "▶ LISTO, MOSTRAR",
+      "handoffBlink": "PRESS START",
+      "placeTitle": "{name}, DESPLIEGA TU FLOTA"
+    },
+    "over": {
+      "victory": "¡VICTORIA!",
+      "defeat": "DERROTA",
+      "winnerIs": "¡GANA {name}!",
+      "theirFleet": "FLOTA DE {name}",
+      "you": "TÚ",
+      "rematch": "▶ REVANCHA",
+      "menu": "◀ MENÚ",
+      "score": "PUNTOS",
+      "newHigh": "¡NUEVO RÉCORD!"
+    },
+    "menu": {
+      "title": "ELIGE MODO",
+      "logout": "SALIR",
+      "level": "DIFICULTAD",
+      "levels": {
+        "easy": "FÁCIL",
+        "normal": "NORMAL",
+        "hard": "DIFÍCIL"
+      },
+      "secondName": "SEGUNDO CAPITÁN",
+      "codePlaceholder": "CÓDIGO",
+      "ai": {
+        "title": "1 JUGADOR · CPU",
+        "description": "Contra el almirante máquina. Elige dificultad.",
+        "start": "▶ A LA BATALLA"
+      },
+      "hotseat": {
+        "title": "2 JUGADORES · 1 EQUIPO",
+        "description": "Dos capitanes en un equipo, por turnos.",
+        "start": "▶ ZARPAR"
+      },
+      "random": {
+        "title": "EN LÍNEA · AZAR",
+        "description": "Enfréntate a un capitán en alta mar.",
+        "start": "▶ BUSCAR RIVAL"
+      },
+      "room": {
+        "title": "EN LÍNEA · SALA",
+        "description": "Crea una sala y envía el código.",
+        "start": "▶ CREAR SALA"
+      },
+      "join": {
+        "title": "UNIRSE CON CÓDIGO",
+        "description": "Escribe el código de la sala.",
+        "start": "▶ UNIRSE"
+      },
+      "links": {
+        "profile": "PERFIL",
+        "scores": "RÉCORDS",
+        "how": "REGLAS",
+        "shop": "MERCADO"
+      }
+    },
+    "room": {
+      "chip": "SALA · {code}",
+      "code": "CÓDIGO DE SALA",
+      "copy": "COPIAR",
+      "share": "COMPARTIR",
+      "ready": "▶ LISTO",
+      "unready": "NO LISTO",
+      "start": "▶ EMPEZAR",
+      "leave": "◀ SALIR DE SALA",
+      "settings": "AJUSTES DE SALA",
+      "unlimited": "SIN LÍMITE",
+      "seconds": "{n} S",
+      "waiting": "ESPERANDO CAPITÁN",
+      "waitingHint": "ENVÍA EL CÓDIGO O ENLACE",
+      "host": "ANFITRIÓN",
+      "guest": "INVITADO",
+      "isReady": "LISTO ✓",
+      "notReady": "NO LISTO",
+      "kick": "✕ EXPULSAR",
+      "joining": "ENTRANDO EN LA SALA",
+      "notFound": "SALA NO ENCONTRADA",
+      "copyCode": "COPIAR CÓDIGO",
+      "copyLink": "COPIAR ENLACE",
+      "copied": "COPIADO ✓",
+      "whatsapp": "COMPARTIR WHATSAPP"
+    },
+    "match": {
+      "title": "BUSCANDO RIVAL",
+      "hint": "RASTREANDO CAPITANES EN EL MAR",
+      "elapsed": "TIEMPO {time}",
+      "cancel": "◀ CANCELAR"
+    },
+    "info": {
+      "back": "◀ MENÚ"
+    },
+    "scores": {
+      "title": "RÉCORDS",
+      "rank": "PUESTO",
+      "name": "CAPITÁN",
+      "mode": "TRAVESÍA",
+      "score": "PUNTOS",
+      "legend": "LEYENDA",
+      "hint": "ACIERTO 1000 · VICTORIA 10000 · CADA TIRO BAJO 100: 500",
+      "win": "VICTORIA",
+      "loss": "DERROTA",
+      "modes": {
+        "ai": "CPU",
+        "hotseat": "1 EQUIPO",
+        "online": "EN LÍNEA"
+      }
+    },
+    "profile": {
+      "kicker": "FICHA DE CAPITÁN",
+      "guest": "INVITADO · PROGRESO SOLO EN ESTE EQUIPO",
+      "account": "CUENTA · {email}",
+      "played": "PARTIDAS",
+      "won": "VICTORIAS",
+      "accuracy": "PUNTERÍA",
+      "best": "RÉCORD",
+      "recent": "ÚLTIMAS TRAVESÍAS",
+      "noGames": "Aún no hay travesías. ¡Dispara la primera andanada, capitán!",
+      "versus": "CONTRA {name}",
+      "upgradeTitle": "CREAR CUENTA",
+      "upgradeText": "Se guardan tu nombre y tus puntos; entra desde cualquier equipo.",
+      "upgradeSubmit": "▶ CREAR CUENTA",
+      "accountTitle": "CUENTA",
+      "accountText": "Entra desde cualquier equipo con tu usuario o correo.",
+      "logout": "CERRAR SESIÓN",
+      "scores": "RÉCORDS ▶"
+    },
+    "how": {
+      "title": "CÓMO JUGAR",
+      "fleet": "FLOTA",
+      "cells": "{n} CASILLAS",
+      "legend": "MARCAS",
+      "controls": "CONTROLES",
+      "play": "▶ A LA BATALLA",
+      "place": {
+        "title": "DESPLIEGA",
+        "text": "Coloca 5 barcos en el mar de 10×10, en horizontal o vertical. No pueden tocarse."
+      },
+      "fire": {
+        "title": "DISPARA",
+        "text": "Por turnos, elige una casilla enemiga. Cada turno tiene tiempo; si se agota, se dispara al azar."
+      },
+      "sink": {
+        "title": "HUNDE LA FLOTA",
+        "text": "Un barco se hunde cuando todas sus casillas reciben impacto. Gana quien hunda primero toda la flota."
+      },
+      "marks": {
+        "ship": "BARCO",
+        "hit": "TOCADO",
+        "sunk": "HUNDIDO",
+        "miss": "AGUA",
+        "aim": "MIRA"
+      },
+      "keys": {
+        "aim": {
+          "key": "◀ ▲ ▼ ▶",
+          "text": "Apuntar (batalla)"
+        },
+        "fire": {
+          "key": "INTRO",
+          "text": "Disparar · o toca una casilla"
+        },
+        "rotate": {
+          "key": "R / CLIC DERECHO",
+          "text": "Girar barco (despliegue)"
+        },
+        "drag": {
+          "key": "ARRASTRAR",
+          "text": "Lleva un barco de la lista al mar"
+        }
+      }
+    },
+    "lost": {
+      "title": "AGUAS PERDIDAS",
+      "text": "Aquí hay mar, pero ningún barco. Rumbo al puerto, capitán.",
+      "home": "▶ MENÚ"
+    },
+    "lang": {
+      "title": "IDIOMA",
+      "auto": "AUTO (NAVEGADOR)"
+    },
+    "nav": {
+      "back": "VOLVER",
+      "leaveTitle": "SALIR",
+      "leaveMessage": "Volver al menú cuenta como rendición. ¿Seguro, capitán?",
+      "leaveConfirm": "▶ SALIR"
+    },
+    "shop": {
+      "title": "MERCADO",
+      "balance": "BOLSA",
+      "tabs": {
+        "gold": "ORO",
+        "ship": "BARCOS",
+        "ball": "BALAS",
+        "flame": "LLAMAS",
+        "map": "MAPAS"
+      },
+      "buy": "COMPRAR",
+      "equip": "EQUIPAR",
+      "equipped": "EQUIPADO ✓",
+      "poor": "ORO INSUFICIENTE",
+      "demo": "TIENDA DEMO · SIN PAGO REAL",
+      "bonus": "+{n}% EXTRA",
+      "bought": "+{n} DE ORO EN TU BOLSA",
+      "needRoom": "CREAR UNA SALA CUESTA {cost} DE ORO",
+      "earn": "Victoria: CPU +30/+50/+80, en línea +100 · Derrota −20",
+      "packs": {
+        "pouch": "BOLSA",
+        "chest": "COFRE",
+        "hoard": "TESORO"
+      }
+    },
+    "items": {
+      "ship": {
+        "classic": "ROBLE CLÁSICO",
+        "royal": "AZUL REAL",
+        "crimson": "PIRATA CARMESÍ",
+        "blackpearl": "PERLA NEGRA",
+        "ghost": "BARCO FANTASMA",
+        "golden": "FLOTA DORADA"
+      },
+      "ball": {
+        "iron": "HIERRO FUNDIDO",
+        "chain": "BALA ENCADENADA",
+        "fire": "BALA DE FUEGO",
+        "ice": "BALA DE HIELO",
+        "gold": "BALA DORADA"
+      },
+      "flame": {
+        "classic": "FUEGO CLÁSICO",
+        "ghost": "FUEGO FANTASMA",
+        "greek": "FUEGO GRIEGO",
+        "cursed": "LLAMA MALDITA",
+        "phosphor": "FÓSFORO"
+      },
+      "map": {
+        "ocean": "OCÉANO ABIERTO",
+        "lagoon": "LAGUNA TROPICAL",
+        "arctic": "MAR ÁRTICO",
+        "emerald": "CALA ESMERALDA",
+        "abyss": "ABISMO",
+        "lava": "MAR DE LAVA"
+      }
+    }
+  }
+}
