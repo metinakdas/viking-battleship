@@ -577,7 +577,7 @@ const styles = themed(() =>
     pCol: { position: 'absolute', left: 20, top: 118, width: 680, bottom: 16, gap: 10 },
     stripP: { position: 'relative', left: 0, top: 0, width: 680, height: 64 },
     pBottom: { flexDirection: 'row', gap: 12, alignItems: 'flex-start', padding: 10 },
-    pSide: { flex: 1, gap: 12, paddingTop: 4 },
+    pSide: { flex: 1, gap: 12, paddingTop: 4, paddingLeft: 18, paddingRight: 6 },
     chatBox: { height: 760 },
   }),
 );

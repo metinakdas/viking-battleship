@@ -22,6 +22,8 @@ import {
   CoinIcon,
 } from '../kit';
 import { hudScore } from '@/features/records/score';
+import { lookFrom } from '@/features/shop/catalog';
+import { useWallet } from '@/store/walletStore';
 
 import { A, DIM, titleShadow, themed } from '../theme';
 
@@ -166,6 +168,7 @@ export function GameOverScreen({
   const blink = useBlink(400);
   const theirName = opponentName ?? up(opponent.displayName);
   const { portrait } = useLayout();
+  const { equipped } = useWallet();
 
   useEffect(() => {
     playSound(iWon ? 'victory' : 'defeat');
@@ -301,7 +304,12 @@ export function GameOverScreen({
                     size={300}
                     labels={false}
                     frameColor={sd.frame}
-                    config={{ C: 12, ships: sd.ships, ...split(sd.shots) }}
+                    config={{
+                      C: 12,
+                      ships: sd.ships,
+                      ...split(sd.shots),
+                      look: lookFrom(equipped, sd.key !== 'enemy'),
+                    }}
                     accessibilityLabel={sd.title}
                   />
                   <View style={styles.pStats}>
@@ -398,7 +406,12 @@ export function GameOverScreen({
               size={480}
               frameColor={s.frame}
               labels={{ lettersTop: 468, numbersLeft: gx - 62 }}
-              config={{ C: s.key === 'enemy' ? 16 : 12, ships: s.ships, ...split(s.shots) }}
+              config={{
+                C: s.key === 'enemy' ? 16 : 12,
+                ships: s.ships,
+                ...split(s.shots),
+                look: lookFrom(equipped, s.key !== 'enemy'),
+              }}
               accessibilityLabel={s.title}
             />
             <View style={[styles.stats, { left: gx + 520 }]}>
